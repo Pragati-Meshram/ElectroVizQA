@@ -35,5 +35,5 @@ This dataset supports research in:
 ## 🗂️ Dataset Structure
 
 The dataset includes:
-- **Circuit diagrams** (PNG/JPG/PDF formats)
+- **Circuit diagrams** (JPG formats)
 - **VQA pairs**: Each image is accompanied by multiple questions and answers.
