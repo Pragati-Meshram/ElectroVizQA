@@ -1,0 +1,2586 @@
+{
+    "195": {
+        "question": "What is simplest expression for this circuit in product-of-sums form?",
+        "image": "39.jpg",
+        "choices": [
+            " (A' + C' + D')(B' + C' + D') ",
+            "ACD  + BCD",
+            "A'C'D' + BCD",
+            "(A + C + D)(B' + C' + D')"
+        ],
+        "image_description": "\"E = (A nor B) or (C nand D)\"",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "pos"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is simplest expression for this circuit in product-of-sums form? Choices: (A)  (A' + C' + D')(B' + C' + D')  (B) ACD  + BCD (C) A'C'D' + BCD (D) (A + C + D)(B' + C' + D') ",
+        "response": "To solve for the simplest expression for \\(E = (A \\text{ nor } B) \\text{ or } (C \\text{ nand } D)\\) in product-of-sums form, we need to break down the logic operations involved.\n\n1. **Understanding NOR and NAND:**\n    - NOR is given as: \\(A \\text{ nor } B = \\overline{A + B}\\).\n    - NAND is given as: \\(C \\text{ nand } D = \\overline{C \\cdot D}\\).\n\n2. **Substitute NOR and NAND in the expression:**\n    \\[\n    E = \\overline{A + B} \\text{ or } \\overline{C \\cdot D}\n    \\]\n\n3. **Expression in terms of OR operation:**\n    - Or operation translates to sum in Boolean algebra.\n    \\[\n    E = \\overline{A + B} + \\overline{C \\cdot D}\n    \\]\n\n4. **Simplify each part for Product-of-Sums form:**\n    - For \\(\\overline{A + B}\\):\n        - Using De Morgan's law: \\(\\overline{A + B} = A' \\cdot B'\\).\n    - For \\(\\overline{C \\cdot D}\\):\n        - Using De Morgan's law: \\(\\overline{C \\cdot D} = C' + D'\\).\n\n5. **Combine the simplified parts:**\n    \\[\n    E = (A' \\cdot B') + (C' + D')\n    \\]\n\n6. **Product of Sums:**\n    - We need to express this in the product-of-sums (POS) form, which involves converting to an equivalent form:\n    \\[\n    E = (A' + (C' + D')) \\cdot (B' + (C' + D'))\n    \\]\n\n    Simplify the inner parts:\n    \\[\n    E = (A' + C' + D') \\cdot (B' + C' + D')\n    \\]\n\nSo, the simplest expression for this circuit in product-of-sums form is:\n\n\\[\n(A' + C' + D')(B' + C' + D')\n\\]\n\nThe correct option is:\n\n(A) \\( (A' + C' + D')(B' + C' + D')"
+    },
+    "143": {
+        "question": "If we replace the NAND gate with a NOR gate, what happens to the output?",
+        "image": "29.jpg ",
+        "choices": [
+            "No change - same as before",
+            "There would be more instances of the output being 1",
+            "There would be less instances of the output being 0",
+            "There would be more instances of the output being 0"
+        ],
+        "image_description": "\"J = (A nor B) nand (C nor D) nand (E nor F) nand (G nor H)\" ",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "gate_replacement",
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If we replace the NAND gate with a NOR gate, what happens to the output? Choices: (A) No change - same as before (B) There would be more instances of the output being 1 (C) There would be less instances of the output being 0 (D) There would be more instances of the output being 0 ",
+        "response": "Let's break down the original expression and the effect of replacing the NAND gates with NOR gates.\n\n### Original Expression\n\\[ J = ((A \\downarrow B) \\uparrow (C \\downarrow D) \\uparrow (E \\downarrow F) \\uparrow (G \\downarrow H)) \\]\n\n### Explanation of Operations\n- NOR operation (\\(\\downarrow\\)): \\( A \\downarrow B = \\overline{A + B} \\)\n- NAND operation (\\(\\uparrow\\)): \\( A \\uparrow B = \\overline{A \\cdot B} \\)\n\n### Breaking Down the Original Expression\n1. \\( P = A \\downarrow B = \\overline{A + B} \\)\n2. \\( Q = C \\downarrow D = \\overline{C + D} \\)\n3. \\( R = E \\downarrow F = \\overline{E + F} \\)\n4. \\( S = G \\downarrow H = \\overline{G + H} \\)\n\nThen:\n\\[ J = (P \\uparrow Q) \\uparrow R \\uparrow S \\]\n\\[ J = \\overline{(P \\cdot Q) \\cdot R \\cdot S} \\]\n\n### Modify with NOR Gates\nReplacing each NAND with a NOR gate implies transforming the multiplication and negation of each part of the expression. Replacing NAND with NOR turns each \\(\\uparrow\\) into a \\(\\downarrow\\):\n\n\\[ J' = ((A \\downarrow B) \\downarrow (C \\downarrow D) \\downarrow (E \\downarrow F) \\downarrow (G \\downarrow H)) \\]\n\nLet's compute \\( J' \\):\n1. NOR of any inputs will produce a different result from NAND of those inputs because \\( \\uparrow \\) and \\( \\downarrow \\) are fundamentally different operations.\n\n### Logical Analysis\n1. NAND (\\(\\uparrow\\)) generates more 1s and is less restrictive; it yields 1 unless all inputs are 1.\n2. NOR (\\(\\downarrow\\)) generates more 0s and is more restrictive; it yields 1 only if all inputs are 0.\n\n### Conclusion\nGiven more zeros:\n- There would naturally be more scenarios where the output \\( J \\) is 0 with NOR gates due to its restrictive nature, compared to the more permissive NAND gates"
+    },
+    "117": {
+        "question": "True or False? There are more instances of C being 1 than 0 in this expression's truth table. ",
+        "image": "24.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "C = (NOT A) XOR B",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "Truth_Table"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? There are more instances of C being 1 than 0 in this expression's truth table.  Choices: (A) True (B) False ",
+        "response": "To solve this question, we need to analyze the expression \\( C = (\\text{NOT } A) \\text{ XOR } B \\) and construct its truth table. \n\nLet's first recall the XOR operation and the NOT operation:\n- XOR (exclusive OR) returns true if and only if exactly one of the inputs is true.\n- NOT operation inverts the value of the operand (i.e., if the value is true, it becomes false, and vice versa).\n\nWe'll build the truth table for the expression step by step:\n\n| A | B | NOT A | C = (NOT A) XOR B |\n|---|---|-------|-------------------|\n| 0 | 0 |   1   |       1           |\n| 0 | 1 |   1   |       0           |\n| 1 | 0 |   0   |       0           |\n| 1 | 1 |   0   |       1           |\n\nWe have:\n- When \\( A = 0 \\) and \\( B = 0 \\): \\( \\text{NOT } A = 1 \\), \\( C = 1 \\text{ XOR } 0 = 1 \\)\n- When \\( A = 0 \\) and \\( B = 1 \\): \\( \\text{NOT } A = 1 \\), \\( C = 1 \\text{ XOR } 1 = 0 \\)\n- When \\( A = 1 \\) and \\( B = 0 \\): \\( \\text{NOT } A = 0 \\), \\( C = 0 \\text{ XOR } 0 = 0 \\)\n- When \\( A = 1 \\) and \\( B = 1 \\): \\( \\text{NOT } A = 0 \\), \\( C = 0 \\text{ XOR } 1 = 1 \\)\n\nNow, let's count the instances of \\( C \\) being 1 and 0:\n- Instances of \\( C = 1 \\): 2 (from the pairs (0,0) and (1,1))\n- Instances of \\( C = 0 \\): 2 (from the pairs (0,1) and (1,0))\n\nSince the number of instances of \\( C \\) being 1 is equal to the number of instances of \\( C \\) being 0, it's clear that there are not more instances of \\("
+    },
+    "196": {
+        "question": "How many literals are in the expression for this circuit?",
+        "image": "40.jpg",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "E = (A xor B) nand (C xor D) ",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "literal_expression"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many literals are in the expression for this circuit? Choices: (A) 1 (B) 2 (C) 3 (D) 4 ",
+        "response": "To solve for how many literals are in the expression \\( E = (A \\oplus B) \\text{ NAND } (C \\oplus D) \\), let's break down the components:\n\n1. \\( \\oplus \\) denotes the XOR (exclusive OR) operation.\n2. NAND is the NOT-AND operation.\n\nFrom the given expression \\( E = (A \\oplus B) \\text{ NAND } (C \\oplus D) \\):\n\n### Step-by-Step Evaluation:\n\n1. **Identify the literals in \\( A \\oplus B \\):**\n   - \\( A \\oplus B = A \\overline{B} + \\overline{A} B \\)\n   - This includes two literals: \\(A\\) and \\(B\\).\n\n2. **Identify the literals in \\( C \\oplus D \\):**\n   - \\( C \\oplus D = C \\overline{D} + \\overline{C} D \\)\n   - This includes two literals: \\(C\\) and \\(D\\).\n\n3. **Combine both parts:**\n   - \\( (A \\oplus B) \\text{ NAND } (C \\oplus D) \\) implies using the results from the \\( A \\oplus B \\) and \\( C \\oplus D \\) which each include their literals.\n\nNow, count all unique literals in the entire expression:\n- The literals involved are \\( A, B, C, \\) and \\( D \\).\n\n### Conclusion:\nThe total number of unique literals in the expression is 4.\n\nThus, the correct option is: **D (4)**."
+    },
+    "188": {
+        "question": "What is the simplest way to express this circuit in sum-of-products form?",
+        "image": "38.jpg",
+        "choices": [
+            "AB + CD + EF + GH + IJ",
+            " A'B' + CD + E'F' + GH + I'J' ",
+            "AB + C'D' + EF + G'H' + IJ",
+            " A'B' + C'D' + E'F' + G'H' + I'J' "
+        ],
+        "image_description": "K = ((A nor B) or (C nor D)) or (E nor F) or ((G nor H) or (I nor J))",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop",
+                "demorgan"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the simplest way to express this circuit in sum-of-products form? Choices: (A) AB + CD + EF + GH + IJ (B)  A'B' + CD + E'F' + GH + I'J'  (C) AB + C'D' + EF + G'H' + IJ (D)  A'B' + C'D' + E'F' + G'H' + I'J'  ",
+        "response": "To express K in sum-of-products form, we need to break down the expression \\( K = ((A \\downarrow B) \\vee (C \\downarrow D)) \\vee (E \\downarrow F) \\vee ((G \\downarrow H) \\vee (I \\downarrow J)) \\) into simpler expressions using NOR gates and then convert the result to its equivalent sum-of-products (SOP) form.\n\nFirst, let's recall the expression for the NOR operation (A NOR B):\n\\[ A \\downarrow B = \\overline{A \\vee B}. \\]\n\nSo, the given expression can be rewritten as:\n\\[ K = ((\\overline{A \\vee B}) \\vee (\\overline{C \\vee D})) \\vee (\\overline{E \\vee F}) \\vee ((\\overline{G \\vee H}) \\vee (\\overline{I \\vee J})). \\]\n\nNext, we use De Morgan's laws to convert the NOR operations into their equivalent forms:\n\\[ \\overline{A \\vee B} = A'B', \\]\n\\[ \\overline{C \\vee D} = C'D', \\]\n\\[ \\overline{E \\vee F} = E'F', \\]\n\\[ \\overline{G \\vee H} = G'H', \\]\n\\[ \\overline{I \\vee J} = I'J'. \\]\n\nSubstituting these back into K, we get:\n\\[ K = ((A'B') \\vee (C'D')) \\vee (E'F') \\vee ((G'H') \\vee (I'J')). \\]\n\nSince the final expression is an OR (\u2228) operation of multiple AND terms in their complemented forms, they can be directly represented in the SOP form.\n\nThe simplest form of \\( K \\) in sum-of-products expression is:\n\\[ A'B' + C'D' + E'F' + G'H' + I'J'. \\]\n\nSo, the correct option is:\n(D) A'B' + C'D' + E'F' + G'H' + I'J'"
+    },
+    "145": {
+        "question": "If A = 1, B = 1, C = 0, D = 0, E = 1, F = 0, G = 0, and H = 1, what is J? ",
+        "image": "29.jpg ",
+        "choices": [
+            "0",
+            "1"
+        ],
+        "image_description": "J = (A or B) nand (C nor D) nand (E nor F) nand (G nor H) ",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "Truth_Table"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If A = 1, B = 1, C = 0, D = 0, E = 1, F = 0, G = 0, and H = 1, what is J?  Choices: (A) 0 (B) 1 ",
+        "response": "To solve for \\( J \\) given the expression \\( J = (A \\text{ or } B) \\text{ nand } (C \\text{ nor } D) \\text{ nand } (E \\text{ nor } F) \\text{ nand } (G \\text{ nor } H) \\), let's evaluate the components step by step using the given values \\( A = 1, B = 1, C = 0, D = 0, E = 1, F = 0, G = 0, \\) and \\( H = 1 \\):\n\n### Step-by-Step Evaluation\n\n1. **Calculate \\( A \\text{ or } B \\)**\n   \\( A \\text{ or } B = 1 \\text{ or } 1 = 1 \\)\n\n2. **Calculate \\( C \\text{ nor } D \\)**\n   \\( C \\text{ nor } D = \\text{not}(C \\text{ or } D) = \\text{not}(0 \\text{ or } 0) = \\text{not}(0) = 1 \\)\n\n3. **Calculate \\( E \\text{ nor } F \\)**\n   \\( E \\text{ nor } F = \\text{not}(E \\text{ or } F) = \\text{not}(1 \\text{ or } 0) = \\text{not}(1) = 0 \\)\n\n4. **Calculate \\( G \\text{ nor } H \\)**\n   \\( G \\text{ nor } H = \\text{not}(G \\text{ or } H) = \\text{not}(0 \\text{ or } 1) = \\text{not}(1) = 0 \\)\n\n### Combine Results Using NAND Operations\n\n5. **Calculate the first nand operation: \\( (A \\text{ or } B) \\text{ nand } (C \\text{ nor } D) \\)**\n   \\( 1 \\text{ nand } 1 = \\text{not}(1 \\text{ and } 1) = \\text{not}(1) = 0 \\)\n\n6. **Calculate the second nand operation: result from 5 \\text{ nand } (E \\text{ nor } F)**\n   \\( 0 \\text{ nand } 0 = \\text{not}(0 \\text{ and } "
+    },
+    "125": {
+        "question": "How could we make this an X NAND Y circuit?",
+        "image": "25.jpg",
+        "choices": [
+            "Remove inversion from X input",
+            "Invert Y input",
+            "Change AND to OR and remove inversion from X input",
+            "Change AND to OR and invert Y input"
+        ],
+        "image_description": "Z = (NOT X) AND Y",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "demorgan",
+                "gate_replacement"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How could we make this an X NAND Y circuit? Choices: (A) Remove inversion from X input (B) Invert Y input (C) Change AND to OR and remove inversion from X input (D) Change AND to OR and invert Y input ",
+        "response": "To convert the given logic circuit \\(Z = (\\text{NOT } X) \\text{ AND } Y\\) into an \\(X \\text{ NAND } Y\\) circuit, we need to follow these steps to achieve the desired logic:\n\n1. **Understand the output of \\(X \\text{ NAND } Y\\)**:\n   - The truth table for \\(X \\text{ NAND } Y\\) is the negation of the AND operation between \\(X\\) and \\(Y\\).\n\n   Truth Table:\n   \\[\n   \\begin{array}{|c|c|c|}\n   \\hline\n   X & Y & X \\text{ AND } Y \\\\\n   \\hline\n   0 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   1 & 0 & 0 \\\\\n   1 & 1 & 1 \\\\\n   \\hline\n   \\end{array}\n   \\]\n   For the NAND operation (\\(\\text{NOT} (X \\text{ AND } Y)\\)):\n   \\[\n   \\begin{array}{|c|c|c|}\n   \\hline\n   X & Y & X \\text{ NAND } Y \\\\\n   \\hline\n   0 & 0 & 1 \\\\\n   0 & 1 & 1 \\\\\n   1 & 0 & 1 \\\\\n   1 & 1 & 0 \\\\\n   \\hline\n   \\end{array}\n   \\]\n\n2. **Analyze the given expression \\(Z = (\\text{NOT } X) \\text{ AND } Y\\)**:\n   - We can represent AND using OR by applying De Morgan's law.\n\n   Using De Morgan's law:\n   \\[\n   (\\text{NOT } X) \\text{ AND } Y = \\text{NOT}(X \\text{ NAND } Y)\n   \\]\n\n   This relationship helps in transforming the logic operations.\n\n3. **Form the desired circuit \\(X \\text{ NAND } Y\\)**:\n   \n   By analyzing the given circuit \\(Z = (\\text{NOT } X) \\text{ AND } Y\\), we need it to be represented using NAND operations such that the output is equivalent to \\(X \\text{ NAND } Y\\).\n\n   To find the correct transformation from the answers given:\n   - Removing the inversion"
+    },
+    "106": {
+        "question": "Roughly how many transistors are required to build this circuit?",
+        "image": "22.jpg",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "Z = X NOR Y",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "area"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Roughly how many transistors are required to build this circuit? Choices: (A) 1 (B) 2 (C) 3 (D) 4 ",
+        "response": "A NOR gate can be implemented using transistors in CMOS technology, specifically using both NMOS and PMOS transistors.\n\nTo realize a NOR gate, you typically need:\n\n- 2 PMOS transistors in parallel for the pull-up network.\n- 2 NMOS transistors in series for the pull-down network.\n\nSumming these up, you need a total of:\n\n\\[ 2 \\text{ (PMOS) } + 2 \\text{ (NMOS) } = 4 \\text{ transistors.} \\]\n\nTherefore, the correct option is:\n(D) 4"
+    },
+    "138": {
+        "question": "How would the delay of the circuit change if we built this circuit minimally from only OR and AND gates?",
+        "image": "28.jpg ",
+        "choices": [
+            "Increase by one gate delay",
+            "Decrease by one gate delay",
+            "Decrease by 2 gate delays",
+            "Would not change"
+        ],
+        "image_description": "E = (A nor B) nor (C nor D)",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "gate_replacement",
+                "gate_delay"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How would the delay of the circuit change if we built this circuit minimally from only OR and AND gates? Choices: (A) Increase by one gate delay (B) Decrease by one gate delay (C) Decrease by 2 gate delays (D) Would not change ",
+        "response": "To determine how the delay of the circuit would change if we built it minimally from only OR and AND gates, we need to analyze the circuit's logic and then consider its implementation with NAND gates versus OR and AND gates.\n\nFirstly, let's transform the NOR gates to OR and AND gates. The expression given is:\n\nE = (A NOR B) NOR (C NOR D)\n\nUsing De Morgan's laws, a NOR gate can be expressed in terms of OR and NOT gates:\n\nA NOR B = NOT (A OR B)\n\nTherefore,\n\nE = NOT (NOT (A OR B) OR NOT (C OR D))\n\nFurther simplifying:\n\n= NOT ((A OR B) AND (C OR D))\n\nThus, E can be represented minimally using OR and AND gates as:\n\n1. Compute A OR B\n2. Compute C OR D\n3. Compute (A OR B) AND (C OR D)\n4. Invert the result of step 3\n\nLet's compare the gate delays for the original and the OR-AND implementation.\n\n### Original NOR-Gate Implementation:\n- Step 1: A NOR B -> 1 NOR gate\n- Step 2: C NOR D -> 1 NOR gate\n- Step 3: (Result of Step 1) NOR (Result of Step 2) -> 1 NOR gate\n\nTotal delay: 3 NOR gate delays\n\n### OR-AND Implementation:\n- Step 1: Compute A OR B -> 1 OR gate\n- Step 2: Compute C OR D -> 1 OR gate\n- Step 3: Compute (A OR B) AND (C OR D) -> 1 AND gate\n- Step 4: Invert the result (equivalent to a NOR) from step 3 -> 1 NOR gate\n\nTotal delay: 3 gate delays (1 OR + 1 OR + 1 AND + 1 NOR)\n\nTherefore, on comparing the delays:\n- The original NOR implementation has a total of 3 NOR gate delays.\n- The OR-AND implementation also has a total of 3 gate delays (although of different types).\n\nThus, converting the circuit from NOR gates to a minimal implementation using only OR and AND gates would **not change** the total delay.\n\nTherefore, the correct option is D.\n\nAnswer: D"
+    },
+    "105": {
+        "question": "If we inverted the inputs of the gate used in this diagram, what gate is that equivalent to?",
+        "image": "21.jpg",
+        "choices": [
+            "XOR gate",
+            "NOT gate",
+            "AND gate",
+            "OR gate"
+        ],
+        "image_description": "C = A NAND B",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "demorgan",
+                "gate_replacement",
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If we inverted the inputs of the gate used in this diagram, what gate is that equivalent to? Choices: (A) XOR gate (B) NOT gate (C) AND gate (D) OR gate ",
+        "response": "To solve the problem, we first need to understand the behavior of a NAND gate and the effect of inverting its inputs.\n\n1. The NAND gate performs the following operation:\n   \\[\n   C = \\overline{A \\land B}\n   \\]\n   where \\(C\\) is the output, and \\(A\\) and \\(B\\) are the inputs.\n\n2. If we invert the inputs, we get:\n   \\[\n   C' = \\overline{\\overline{A} \\land \\overline{B}}\n   \\]\n   Simplifying this using De Morgan's laws, we get:\n   \\[\n   C' = A \\lor B\n   \\]\n   So, inverting the inputs of a NAND gate is equivalent to an OR gate.\n\nTherefore, the correct option is:\n(D) OR gate"
+    },
+    "316": {
+        "question": "How could we build this circuit with one OR gate and the least number of AND gates? Assume complemented inputs are available. ",
+        "image": "64.jpg",
+        "choices": [
+            "AB",
+            " A'B' ",
+            " AB + A'B' ",
+            " A'B + AB' "
+        ],
+        "image_description": "\"A'B + AB'\"",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How could we build this circuit with one OR gate and the least number of AND gates? Assume complemented inputs are available.  Choices: (A) AB (B)  A'B'  (C)  AB + A'B'  (D)  A'B + AB'  ",
+        "response": "First, let's simplify the given expression \\( A'B + AB' \\):\n\n1. The given expression \\( A'B + AB' \\) is a well-known Boolean function. It represents the XOR (exclusive OR) function where the output is true when the inputs differ.\n   \n2. Using De Morgan's laws and Boolean algebra, we can express \\( A'B + AB' \\) as:\n\n\\[ \nA'B + AB' = (A \\oplus B) \n\\]\n\nNow, let's build the equivalent circuit with one OR gate and the least number of AND gates where complemented inputs are available:\n\n- To construct \\( A'B + AB' \\), we need two AND gates and one OR gate.\n- We will use the two AND gates to create the terms \\( A'B \\) and \\( AB' \\).\n- Then, we use an OR gate to sum these two terms.\n\nSteps to build the circuit:\n1. Use one AND gate to create the term \\( A'B \\):\n   - Inputs: \\( A' \\) and \\( B \\)\n\n2. Use another AND gate to create the term \\( AB' \\):\n   - Inputs: \\( A \\) and \\( B' \\)\n\n3. Use one OR gate to sum the outputs of the two AND gates:\n   - Inputs: \\( A'B \\) and \\( AB' \\)\n\nThus, the resulting expression \\( A'B + AB' \\) is formed with an OR gate from the outputs of these two AND gates.\n\nThe correct option for how we could build this circuit with the least number of AND gates and one OR gate, given the inputs are complemented when needed, is:\n\n(D) A'B + AB'"
+    },
+    "349": {
+        "question": "If A = 0, B = 0, and C = 1, what is the output?",
+        "image": "70.jpg",
+        "choices": [
+            "0",
+            "1"
+        ],
+        "image_description": "\"AB + C\"",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "Truth_Table"
+            ],
+            "image_char": [
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If A = 0, B = 0, and C = 1, what is the output? Choices: (A) 0 (B) 1 ",
+        "response": "Given the expression \"AB + C\", let's solve it step-by-step with the provided values.\n\nFirstly, let's substitute the given values into the expression:\n- A = 0\n- B = 0\n- C = 1\n\nSubstitute these values into the expression:\n\\[ AB + C \\]\n\nSince A and B are both 0, calculate \\( AB \\):\n\\[ 0 \\times 0 = 0 \\]\n\nNow add \\( C \\):\n\\[ 0 + 1 = 1 \\]\n\nSo, the output is 1.\n\nThe correct option is:\n(B) 1"
+    },
+    "319": {
+        "question": "How many inputs does the circuit for this expression have?",
+        "image": "64.jpg",
+        "choices": [
+            "2",
+            "4",
+            "6",
+            "8"
+        ],
+        "image_description": "A'B + AB'",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "Truth_Table",
+                "literal_expression"
+            ],
+            "image_char": [
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many inputs does the circuit for this expression have? Choices: (A) 2 (B) 4 (C) 6 (D) 8 ",
+        "response": "To solve for the number of inputs in the circuit representing the expression \\( A'B + AB' \\), we need to analyze the expression.\n\nThe given expression \\( A'B + AB' \\) is a Boolean expression that consists of two variables \\( A \\) and \\( B \\):\n\n- \\( A' \\) denotes the complement (NOT operation) of \\( A \\).\n- \\( B \\) denotes the variable \\( B \\).\n- \\( AB' \\) involves the variable \\( A \\) AND the complement of \\( B \\).\n\nEvery expression \\( A'B \\) and \\( AB' \\) includes inputs \\( A \\) and \\( B \\).\n\nThus, the Boolean expression \\( A'B + AB' \\) involves two different input variables (\\( A \\) and \\( B \\)) in total.\n\nTherefore, the number of inputs the circuit for this expression has is:\n\n(A) 2"
+    },
+    "334": {
+        "question": "If the circuit is built using the SOP expression, how many AND and OR gates would be used?",
+        "image": "67.jpg",
+        "choices": [
+            "1 AND gates, 0 OR gates",
+            "0 AND gates, 1 OR gate",
+            "1 AND gate, 2 OR gates",
+            "2 AND gates, 2 OR gates"
+        ],
+        "image_description": "A' + B'",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If the circuit is built using the SOP expression, how many AND and OR gates would be used? Choices: (A) 1 AND gates, 0 OR gates (B) 0 AND gates, 1 OR gate (C) 1 AND gate, 2 OR gates (D) 2 AND gates, 2 OR gates ",
+        "response": "To determine how many AND and OR gates would be used in a circuit to represent the given expression \\(A' + B'\\) using the Sum of Products (SOP) form, let's analyze the expression step by step.\n\n1. **Understanding the Expression**: The expression \\(A' + B'\\) is in its simplest form already, but we are being asked to consider an SOP form.\n\n2. **Decomposing the Expression**:\n    - For SOP (Sum of Products), we need to see if there's any part that requires combining terms using AND gates and then summing them up using OR gates.\n    - \\(A' + B'\\) doesn't require any product terms to be combined with an AND gate; it is simply the logical OR of two terms \\(A'\\) and \\(B'\\).\n\n3. **Boolean Implementation**:\n    - To implement the NOT operations \\(A' \\) and \\(B'\\), we need two NOT gates (this is separate from AND/OR requirements).\n    - Then, these two NOT gates feed into one OR gate.\n\n4. **Count of Gates**:\n    - AND gates: The given expression does not utilize AND operations, hence no AND gates are used.\n    - OR gate: The expression is directly an OR of \\(A'\\) and \\(B'\\), hence one OR gate is used.\n\nGiven these points, the number of AND gates used is 0 and the number of OR gates used is 1.\n\nSo the correct option is:\n\n(B) 0 AND gates, 1 OR gate"
+    },
+    "347": {
+        "question": "What is the minimal POS expression?",
+        "image": "70.jpg",
+        "choices": [
+            "AB + CD",
+            "AB + C",
+            "AC + BC",
+            "(A + C)(B+C)"
+        ],
+        "image_description": "AB + C",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "pos"
+            ],
+            "image_char": [
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the minimal POS expression? Choices: (A) AB + CD (B) AB + C (C) AC + BC (D) (A + C)(B+C) ",
+        "response": "To determine the minimal POS (Product of Sums) expression for the given expression \\( AB + C \\), let's begin by analyzing the given expression. \n\nThe abbreviated POS form means that each term in the expression is written as a product (AND) of sums (ORs).\n\nGiven expression: \\( AB + C \\)\n\nFirst, apply De Morgan's theorem and Boolean algebra techniques to convert this into a POS form.\n\n1. Start with the given expression:\n   \\[\n   AB + C\n   \\]\n2. Apply De Morgan's theorem:\n   First, we can express the given term in NOR form. According to De Morgan's theorem:\n   \\[\n   AB + C = (AB)'(A')' + (C)'(C)'\n   \\]\n   Simplifying this gives:\n   \\[\n   = (A'+B')(A + B')(C + D')'\n   \\]\n3. Therefore, the expression in POS form is:\n   \\[\n   (A + C)(B + C)\n   \\]\n\nSo, the minimal POS expression for \\( AB + C \\) is:\n\\[\n(A + C)(B + C)\n\\]\n\nThe correct answer is:\n\\[\n(D) (A + C)(B + C)\n\\]\n\nSo the correct option letter is: D"
+    },
+    "359": {
+        "question": "How many minterms are there in the corresponding K-map?",
+        "image": "72.jpg",
+        "choices": [
+            "0",
+            "4",
+            "7",
+            "11"
+        ],
+        "image_description": "AB + CD",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "K_map"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many minterms are there in the corresponding K-map? Choices: (A) 0 (B) 4 (C) 7 (D) 11 ",
+        "response": "To determine the number of minterms in a Karnaugh Map (K-map) that corresponds to the expression \\( AB + CD \\), we should first understand the minterms that are covered by this Boolean expression.\n\n1. **Expression Analysis:**\n   - The given Boolean expression is \\( AB + CD \\).\n   - This implies two separate conditions:\n     - \\( AB \\): Minterms where both \\( A \\) and \\( B \\) are 1.\n     - \\( CD \\): Minterms where both \\( C \\) and \\( D \\) are 1.\n\n2. **Minterms of \\( AB \\):**\n   - For \\( AB \\):\n     - When \\( A = 1 \\) and \\( B = 1 \\) (regardless of \\( C \\) and \\( D \\)).\n     - Possible minterms: 12 (1100), 13 (1101), 14 (1110), 15 (1111).\n   - Therefore, minterms for \\( AB \\) are 12, 13, 14, and 15.\n\n3. **Minterms of \\( CD \\):**\n   - For \\( CD \\):\n     - When \\( C = 1 \\) and \\( D = 1 \\) (regardless of \\( A \\) and \\( B \\)).\n     - Possible minterms: 3 (0011), 7 (0111), 11 (1011), 15 (1111).\n   - Therefore, minterms for \\( CD \\) are 3, 7, 11, and 15.\n\n4. **Combining Minterms:**\n   - Combining minterms from both \\( AB \\) and \\( CD \\):\n     - \\( AB \\): 12, 13, 14, 15\n     - \\( CD \\): 3, 7, 11, 15\n   - Combined minterms: 3, 7, 11, 12, 13, 14, 15\n\n5. **Count the Unique Minterms:**\n   - The unique minterms are: 3, 7, 11, 12, 13, 14, 15\n   - Total number of unique minterms: 7\n\nTherefore, the number of minterms in the corresponding K-map for the expression \\( AB + CD \\) is \\( \\boxed{7} \\).\n\nThe"
+    },
+    "377": {
+        "question": "How could we build this circuit with one AND gate and the least number of OR gates?",
+        "image": "76.jpg",
+        "choices": [
+            "A + B",
+            "AB + CD",
+            "(A' + B + C + D')(A + C')",
+            "ABCD"
+        ],
+        "image_description": "C'D' + A'C' + BC' + AC",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "pos"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How could we build this circuit with one AND gate and the least number of OR gates? Choices: (A) A + B (B) AB + CD (C) (A' + B + C + D')(A + C') (D) ABCD ",
+        "response": "To solve the problem, we need to simplify the given Boolean expression \\( C'D' + A'C' + BC' + AC \\) and see how it can be implemented using the given options. Let's break down and analyze the expression step-by-step.\n\n1. **Original expression**: \\( C'D' + A'C' + BC' + AC \\)\n\n2. **Grouping common factors**:\n   \\[\n   C'D' + A'C' + BC' + AC = C'(D' + A') + AC + BC'\n   \\]\n\n   Notice that \\(C'\\) is a common factor in \\(C'D' + A'C'\\) and can be factored out:\n   \\[\n   C'(A' + D') + AC + BC'\n   \\]\n\n3. **Simplify further**. Notice \\(C'\\) term appears twice:\n   \\[\n   = C'(A' + D' + B) + AC\n   \\]\n\nNow, let's check the options to see if any matches this simplified form or if they help implement the logic with one AND gate and the least number of OR gates:\n\n**Option (A)**: A + B\n- This doesn't match our expression.\n\n**Option (B)**: AB + CD\n- This doesn't seem to simplify or fit the form of our expression.\n\n**Option (C)**: \\( (A' + B + C + D')(A + C') \\)\n- Expand to check equivalence:\n  - Expanding \\( (A' + B + C + D')(A + C') \\):\n    \\[\n    (A' + B + C + D') = X \\quad \\text{(for simplification)}\n    \\]\n    \\[\n    X \\cdot (A + C') = XA + XC'\n    \\]\n    \\[\n    = (A' + B + C + D')A + (A' + B + C + D')C'\n    \\]\n    \\[\n    = A'A + BA + CA + D'A + A'C' + BC' + CC' + D'C'\n    \\]\n    \\[\n    = 0 + BA + CA + 0 + A'C' + BC' + 0 + D'C'\n    \\]\n    \\[\n    = BA + CA + A'C' + BC' + D'C'\n    \\]\n    Not a concise match to our equations simplifications.\n\n"
+    },
+    "386": {
+        "question": "What would the expression for this circuit be if it is built using the least number of gates possible?",
+        "image": "78.jpg",
+        "choices": [
+            "A",
+            "AB",
+            "ABC",
+            "ABCD"
+        ],
+        "image_description": " A",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "sop"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What would the expression for this circuit be if it is built using the least number of gates possible? Choices: (A) A (B) AB (C) ABC (D) ABCD ",
+        "response": "To accurately determine the expression for the circuit, the specific figure or diagram representing the circuit labeled as A is crucial. Since the figure is not provided, I can guide you through the standard process of deducing the expression if we were to have a typical logic circuit.\n\nLet's consider what kind of information you might have in a typical setup\u2014basic logic gates (AND, OR, NOT, etc.) connected in a particular manner to produce an output.\n\nHere we break down the possible logic gates and connections:\n\n1. **AND Gate**: The output is true if all the inputs are true, i.e., for inputs A and B, the output is \\( AB \\).\n2. **OR Gate**: The output is true if at least one input is true, i.e., for inputs A and B, the output is \\( A + B \\).\n3. **NOT Gate**: The output is the opposite of the input, i.e., for input A, the output is \\( \\overline{A} \\).\n\nGiven the choices:\n- (A) A\n- (B) AB\n- (C) ABC\n- (D) ABCD\n\nLet's deduce the simplest expression consistent with having a single input or series of inputs through a minimal number of gates.\n\n1. **Single Input (A)**:\n   - This suggests there is no gate, or the output matches directly with the input. \n   - Expression: A\n\n2. **Two Inputs (AB)**:\n   - This suggests an AND gate combining inputs \\( A \\) and \\( B \\).\n   - Expression: \\( AB \\)\n\n3. **Three Inputs (ABC)**:\n   - This likely involves multiple AND gates combining \\( A \\), \\( B \\), and \\( C \\).\n   - Expression: \\( ABC \\)\n\n4. **Four Inputs (ABCD)**:\n   - This implies combining four inputs through several AND gates.\n   - Expression: \\( ABCD \\)\n\nBased on the usual method for minimizing gate usage, a figure labeled A likely implies the simplest scenario, which could merely be a direct input:\n\n**ANSWER: A**"
+    },
+    "392": {
+        "question": "How many terms does the minimal POS expression have?",
+        "image": "79.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "BD + AD + A'B'C",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "pos"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many terms does the minimal POS expression have? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "To determine the number of terms in the minimal POS (Product of Sums) expression for the given Boolean expression \\( BD + AD + A'B'C \\), we first need to understand the form of the given expression and transform it.\n\nThe given expression is \\( BD + AD + A'B'C \\). Let's proceed step by step:\n\n1. **Identify Terms**:\n   The given expression has three terms:\n      - \\( BD \\)\n      - \\( AD \\)\n      - \\( A'B'C \\)\n\n2. **Convert each term to POS form**:\n   We want to identify how each of these terms will influence the minimal POS form. In the Sum of Products (SOP) form like \\( BD + AD + A'B'C \\), each individual product term translates to a bracketed sum in POS form.\n   \n   Let's express each term separately into its POS form (using De Morgan's laws):\n   - \\( BD \\) becomes \\( (B + D') \\)\n   - \\( AD \\) becomes \\( (A + D') \\)\n   - \\( A'B'C \\) typically inverts directly but may need manipulation for intersection\n   \n3. **Combine terms**:\n   The critical part is to merge these expressions considering their minimal intersections in POS form. Instead of converting them and then re-merging (which could be complex without Boolean simplification algorithms), we ask how many individual minimal groupings will appear:\n\n   When terms are in SOP (Sum of Products) form and we translate them into the minimal POS form, typically, each independent product term transforms as shown:\n   - Direct minimal conversion isn't always 1-to-1 for simplification but as expressions were given (minding the typical boolean steps we follow), they indicate three distinct product terms:\n   \n4. **Determine Minimal POS terms**:\n   Simplification could merge/interact terms minimally, but each product usually represents key intersecting minimal forms directly.\n\nTherefore, under our simplified direct conversion without extraneous merging complexity, the minimal POS expression directly derives from these fundamental product contributions. The minimal representation - keeping straightforward critical counts - typically maintains the individual minimal consistencies.\n\nThus, the minimal POS form directly states the form intersections contributing to key terms\u2019 minimal counts:\n\nThus, the minimal expression retains three terms considering given expression structures, ensuring no loss of accuracy without advanced simplifications merging multiple terms redundantly.\n\nSo the correct minimal POS term count, directly transformed, is:\n   \n   **(D"
+    },
+    "374": {
+        "question": "How many maxterms are there in the K-map?",
+        "image": "75.jpg",
+        "choices": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "image_description": "(A + B)(C + D)",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "K_map"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many maxterms are there in the K-map? Choices: (A) 5 (B) 6 (C) 7 (D) 8 ",
+        "response": "To determine the number of maxterms in the K-map for the given expression \\((A + B)(C + D)\\), follow these steps:\n\n1. **Expand the given expression**:\n   \\[\n   (A + B)(C + D) = AC + AD + BC + BD\n   \\]\n\n2. **Construct the truth table**:\n   - List all possible values for \\(A\\), \\(B\\), \\(C\\), and \\(D\\).\n   - Identify the output of the expression \\(AC + AD + BC + BD\\) for each combination of input values.\n\n3. **Count the zeros in the truth table**:\n   Each zero in the output column of the truth table represents a maxterm.\n\nHere are the possible values and expressions:\n\n|  A  |  B  |  C  |  D  | Expression AC + AD + BC + BD |\n|:---:|:---:|:---:|:---:|:---------------------:|\n|  0  |  0  |  0  |  0  |            0          |\n|  0  |  0  |  0  |  1  |            1          |\n|  0  |  0  |  1  |  0  |            1          |\n|  0  |  0  |  1  |  1  |            1          |\n|  0  |  1  |  0  |  0  |            1          |\n|  0  |  1  |  0  |  1  |            1          |\n|  0  |  1  |  1  |  0  |            1          |\n|  0  |  1  |  1  |  1  |            1          |\n|  1  |  0  |  0  |  0  |            1          |\n|  1  |  0  |  0  |  1  |            1          |\n|  1  |  0  |  1  |  0  |            1          |\n|  1  |  "
+    },
+    "453": {
+        "question": "What is the function of this circuit?",
+        "image": "91.jpg",
+        "choices": [
+            "Confusing the bits",
+            "Mixing up a set of given bits",
+            "Storing the value of a bit when given a set input",
+            "Swapping the value of a bit when given a set input"
+        ],
+        "image_description": "Latch - NAND Dual-Inverter Loop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the function of this circuit? Choices: (A) Confusing the bits (B) Mixing up a set of given bits (C) Storing the value of a bit when given a set input (D) Swapping the value of a bit when given a set input "
+    },
+    "473": {
+        "question": "What is the value of QN in row 5?",
+        "image": "95.jpg",
+        "choices": [
+            "0",
+            "1"
+        ],
+        "image_description": "NOR-Gate Latch based truth table",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "Truth_Table"
+            ],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "truth_table_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the value of QN in row 5? Choices: (A) 0 (B) 1 "
+    },
+    "467": {
+        "question": "What happens when WE = 1?",
+        "image": "94.jpg",
+        "choices": [
+            "Nothing",
+            "Circuit freezes",
+            "The value of D is copied to Q",
+            "Q defaults to 0"
+        ],
+        "image_description": "Gated D-Latch",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What happens when WE = 1? Choices: (A) Nothing (B) Circuit freezes (C) The value of D is copied to Q (D) Q defaults to 0 ",
+        "response": "When analyzing the function of a Gated D-Latch, it is essential to understand its behavior based on the Write Enable (WE) signal. The Gated D-Latch operates as follows:\n\n- **When WE = 0**: The latch is disabled, meaning that the current state of Q is retained regardless of changes in the input D.\n- **When WE = 1**: The latch is enabled, and the input D is copied to the output Q. In other words, when WE is high, the value of D is directly transferred to Q.\n\nGiven the prompt, we need to determine the correct outcome when WE is set to 1.\n\nGiven that:\n- Option (A) suggests nothing happens, which is incorrect as WE being high actively allows the input D to influence the output Q.\n- Option (B) indicates the circuit freezes, which is incorrect because WE being high would actually allow changes, not freeze the operation.\n- Option (C) states that the value of D is copied to Q, which perfectly aligns with the functional behavior of the Gated D-Latch when WE is high.\n- Option (D) assumes Q defaults to 0, which is not a typical behavior of the Gated D-Latch operating in the described manner.\n\nThus, **the value of D is copied to Q when WE = 1**, making the correct answer:\n\n(C) The value of D is copied to Q"
+    },
+    "1001": {
+        "question": "If the input 'R' is set to 0 and 'S' is set to 1, and the previous state of the latch was Reset (Q=0, Q'=1), what will be the new output state?",
+        "image": "101.jpg",
+        "choices": [
+            "Set (Q=1, Q'=0)",
+            "Reset (Q=0, Q'=1)",
+            "Indeterminate state",
+            "No change in the previous state"
+        ],
+        "image_description": "NOR gate based RS  Latch",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If the input 'R' is set to 0 and 'S' is set to 1, and the previous state of the latch was Reset (Q=0, Q'=1), what will be the new output state? Choices: (A) Set (Q=1, Q'=0) (B) Reset (Q=0, Q'=1) (C) Indeterminate state (D) No change in the previous state ",
+        "response": "To analyze the output state of a NOR gate-based RS latch, let's follow the given inputs and the previous state step-by-step.\n\nGiven:\n- Previous State: \\( Q = 0 \\), \\( Q' = 1 \\)\n- Inputs: \\( R = 0 \\), \\( S = 1 \\)\n\nThe truth table for a NOR gate and the workings of RS latch are essential here. \n\n1. **NOR Gate**: The output is \"0\" only if at least one input is \"1\". The output is \"1\" when all inputs are \"0\".\n\n2. **RS Latch** with NOR gates:\n\n    For the NOR-based RS latch, the outputs can be determined as follows:\n    - \\( Q \\) is the output of the NOR gate where inputs are \\( S \\) and \\( Q' \\)\n    - \\( Q' \\) is the output of the NOR gate where inputs are \\( R \\) and \\( Q \\)\n\nLet's calculate the new state step-by-step:\n\n### Step 1: Calculate Q\nInputs to the NOR gate generating \\( Q \\):\n- \\( S = 1 \\)\n- \\( Q' = 1 \\)\n\nSo, \\( Q = \\overline{S \\, + \\, Q'} = \\overline{1 + 1} \\)\nThus, \\( Q = \\overline{1} \\)\nTherefore, \\( Q = 0 \\)\n\n### Step 2: Calculate Q'\nInputs to the NOR gate generating \\( Q' \\):\n- \\( R = 0 \\)\n- \\( Q = 0 \\)\n\nSo, \\( Q' = \\overline{R + Q} = \\overline{0 + 0} \\)\nThus, \\( Q' = \\overline{0} \\)\nTherefore, \\( Q' = 1 \\)\n\n### Conclusion\nThe new state remains as \\( Q = 0 \\), \\( Q' = 1 \\).\n\nSo the new output state is the same as the previous state, indicating no change.\n\nThe correct answer is (D) No change in the previous state."
+    },
+    "1002": {
+        "question": "What is the primary disadvantage of using  this circuit compared to other types of latches or flip-flops?",
+        "image": "102.jpg",
+        "choices": [
+            "Limited number of stable states",
+            "Increased power consumption",
+            "Complexity in design",
+            "Susceptibility to noise"
+        ],
+        "image_description": "NAND gate based RS Latch",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the primary disadvantage of using  this circuit compared to other types of latches or flip-flops? Choices: (A) Limited number of stable states (B) Increased power consumption (C) Complexity in design (D) Susceptibility to noise ",
+        "response": "A NAND gate based RS Latch is one of the foundational circuit elements used in sequential logic, known for its simple design and low power consumption. However, it also has its drawbacks compared to other types of latches or flip-flops. The primary disadvantage is related to its behavior under certain conditions, particularly when both inputs (Set and Reset) are high.\n\nWhen both inputs to a NAND gate RS Latch are high, it enters into an indeterminate state where both outputs are high, which is typically not a valid or stable logical state for the latch. This indeterminate state can lead to unpredictable behavior and instability, making the latch sensitive to noise and timing issues. Therefore, the circuit is prone to erroneous outputs due to its inherent susceptibility to noise.\n\nGiven the choices:\n(A) Limited number of stable states\n(B) Increased power consumption\n(C) Complexity in design\n(D) Susceptibility to noise\n\nThe correct answer is:\n(D) Susceptibility to noise"
+    },
+    "1003": {
+        "question": "What is the function of the clock signal (CLK) in the circuit?",
+        "image": "106.jpg",
+        "choices": [
+            "To synchronize the state changes",
+            "To provide power to the circuit",
+            "To reset the flip-flop",
+            "To enable the J and K inputs"
+        ],
+        "image_description": "J-K flip flop",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the function of the clock signal (CLK) in the circuit? Choices: (A) To synchronize the state changes (B) To provide power to the circuit (C) To reset the flip-flop (D) To enable the J and K inputs ",
+        "response": "The clock signal (CLK) in a J-K flip-flop circuit is crucial for synchronizing the state changes. These flip-flops are edge-triggered devices, meaning they change their state on a specific transition of the clock signal, either on the rising edge (positive transition) or the falling edge (negative transition). This ensures that the state changes occur at predictable intervals, allowing the circuit to operate in a coherent and timed manner.\n\nTherefore, the function of the clock signal (CLK) in the J-K flip-flop circuit is:\n\n(A) To synchronize the state changes\n\nSo the correct option is: **A**"
+    },
+    "457": {
+        "question": "What happens when S' has a value of 1?",
+        "image": "92.jpg",
+        "choices": [
+            "No effect on dual inverter loop",
+            "Loop becomes automatically unstable",
+            "Loop becomes automatically stable"
+        ],
+        "image_description": "Latch - NAND Dual-Inverter Loop",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What happens when S' has a value of 1? Choices: (A) No effect on dual inverter loop (B) Loop becomes automatically unstable (C) Loop becomes automatically stable "
+    },
+    "464": {
+        "question": "What happens if R' and S' are both high at the same time?",
+        "image": "93.jpg",
+        "choices": [
+            "Stable state",
+            "P = Q",
+            "Metastable state - state that rapidly alternates between 0 and 1",
+            "Bistability"
+        ],
+        "image_description": "NAND R-S latch",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What happens if R' and S' are both high at the same time? Choices: (A) Stable state (B) P = Q (C) Metastable state - state that rapidly alternates between 0 and 1 (D) Bistability ",
+        "response": "In a NAND R-S latch, the inputs are typically denoted as \\( R' \\) (Reset) and \\( S' \\) (Set). The behavior of the latch depends on the states of these inputs.\n\nWhen \\( R' \\) and \\( S' \\) are both high (\\( R' = 1 \\) and \\( S' = 1 \\)), the outputs of the NAND gates will influence each other based on their previous states. Specifically:\n- If both \\( S' \\) and \\( R' \\) are high, the outputs Q and \\( \\overline{Q} \\) will maintain their previous state. This is because the NAND gates will output the same value as before since their inputs are not forcing a change.\n\nTherefore, if \\( R' \\) and \\( S' \\) are both high at the same time, the latch remains in a stable state, preserving its previous output values.\n\nThe correct answer is:\n(A) Stable state"
+    },
+    "456": {
+        "question": "Why does the \"S\" in the diagram have a bar over it?",
+        "image": "92.jpg",
+        "choices": [
+            "Don't care value",
+            "Active high- we want S' to be 1",
+            "Active low - we want S' to be 0",
+            "No reason"
+        ],
+        "image_description": "Latch - NAND Dual-Inverter Loop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Why does the \"S\" in the diagram have a bar over it? Choices: (A) Don't care value (B) Active high- we want S' to be 1 (C) Active low - we want S' to be 0 (D) No reason "
+    },
+    "455": {
+        "question": "What are the gates being used in this circuit?",
+        "image": "91.jpg",
+        "choices": [
+            "AND gates",
+            "NOT gates",
+            "NAND gates",
+            "NOR gates"
+        ],
+        "image_description": "Latch - NAND Dual-Inverter Loop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What are the gates being used in this circuit? Choices: (A) AND gates (B) NOT gates (C) NAND gates (D) NOR gates "    },
+    "476": {
+        "question": "How many latches are there in such a flip-flop?",
+        "image": "96.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop ",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many latches are there in such a flip-flop? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "A Positive-Edge Triggered D Flip-flop typically consists of two latches: a master latch and a slave latch. The master latch is sensitive to the clock signal's low phase, while the slave latch is sensitive to the clock signal's high phase. When the clock signal transitions from low to high (the positive edge), the state of the master latch is transferred to the slave latch, effectively sampling the input D and updating the output Q.\n\nThus, the correct answer is:\n(C) 2"
+    },
+    "477": {
+        "question": "Which of these statements about the diagram is true?",
+        "image": "96.jpg",
+        "choices": [
+            "Values freeze every second",
+            "Values freeze during every positive edge",
+            "Values are rapidly changing and cannot be controlled",
+            "Values are stored/changed on every rising edge of the clock signal"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Which of these statements about the diagram is true? Choices: (A) Values freeze every second (B) Values freeze during every positive edge (C) Values are rapidly changing and cannot be controlled (D) Values are stored/changed on every rising edge of the clock signal ",
+        "response": "Given the context of a Positive-Edge Triggered D Flip-flop, the correct statement out of the provided choices is: \n\n(D) Values are stored/changed on every rising edge of the clock signal\n\nA Positive-Edge Triggered D Flip-flop updates its output based on the input value only at the moment of the rising (positive) edge of the clock signal."
+    },
+    "478": {
+        "question": "How often does Q change value in this circuit?",
+        "image": "96.jpg",
+        "choices": [
+            "Once every second",
+            "Once every 2 clock cycles",
+            "Once every clock cycle",
+            "Twice every clock cycle"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How often does Q change value in this circuit? Choices: (A) Once every second (B) Once every 2 clock cycles (C) Once every clock cycle (D) Twice every clock cycle ",
+        "response": "To determine how often the output Q of a positive-edge triggered D flip-flop changes value, we need to understand the behavior of the flip-flop. \n\nA positive-edge triggered D flip-flop updates its output Q to match the input D at the moment of the rising (positive) edge of the clock signal. This means that Q can only change state on the rising edge of the clock.\n\nBased on this, let\u2019s analyze the given choices:\n\n(A) Once every second - This would depend on the actual frequency of the clock signal, which is not provided in the question. Since Q is not tied to an absolute time interval like a second, this is not a correct option without further information.\n\n(B) Once every 2 clock cycles - This would imply that Q doesn't necessarily update with every rising edge, which could only happen if there is some additional external control or condition that makes Q change every 2 cycles. However, in a standard positive-edge triggered D flip-flop, Q can change on every positive clock edge, so this is not accurate.\n\n(C) Once every clock cycle - This option states that Q updates with every positive edge of the clock cycle. Since Q changes state based on the D input at every rising edge, Q has the opportunity to change its value once every clock cycle if the D input is changing.\n\n(D) Twice every clock cycle - This is incorrect because a positive-edge triggered flip-flop only updates its state on the rising edge, not both rising and falling edges. Therefore, Q cannot change twice in a single clock cycle.\n\nGiven this analysis, the correct answer is:\n\n(C) Once every clock cycle"
+    },
+    "479": {
+        "question": "In this circuit, which during which part of the clock signal does Q change value?",
+        "image": "96.jpg",
+        "choices": [
+            "High part of a clock signal",
+            "Low part of a clock signal",
+            "Clock edge where value goes from low to high",
+            "Clock edge where value goes from high to low"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: In this circuit, which during which part of the clock signal does Q change value? Choices: (A) High part of a clock signal (B) Low part of a clock signal (C) Clock edge where value goes from low to high (D) Clock edge where value goes from high to low ",
+        "response": "In a Positive-Edge Triggered D Flip-flop, the output Q changes on the rising edge of the clock signal. This means Q updates its value when the clock signal transitions from low to high.\n\nSo, the correct option is:\n\n(C) Clock edge where value goes from low to high"
+    },
+    "480": {
+        "question": "If D is set to 1, what is the value of Q after the upcoming clock rising edge?",
+        "image": "96.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If D is set to 1, what is the value of Q after the upcoming clock rising edge? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "In a positive-edge triggered D flip-flop, the output \\( Q \\) takes the value of the input \\( D \\) at the moment of the rising edge of the clock signal. If \\( D \\) is set to 1, then upon the next rising edge of the clock, \\( Q \\) will also be set to 1.\n\nTherefore, the value of \\( Q \\) after the upcoming clock rising edge will be 1.\n\nCorrect option: (B) 1"
+    },
+    "491": {
+        "question": "This diagram represents a D flip-flop, where D is static input. What does the \"C\" in the diagram represent?",
+        "image": "99.jpg",
+        "choices": [
+            "Clear",
+            "Count",
+            "Clock",
+            "Capacitance"
+        ],
+        "image_description": "D Flip-Flop ",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: This diagram represents a D flip-flop, where D is static input. What does the \"C\" in the diagram represent? Choices: (A) Clear (B) Count (C) Clock (D) Capacitance "    },
+    "492": {
+        "question": "What type of gate is used?",
+        "image": "99.jpg",
+        "choices": [
+            "AND gate",
+            "OR gate",
+            "NAND gate",
+            "NOR gate"
+        ],
+        "image_description": "D Flip-Flop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What type of gate is used? Choices: (A) AND gate (B) OR gate (C) NAND gate (D) NOR gate "    },
+    "493": {
+        "question": "When will the flip-flop output change?",
+        "image": "99.jpg",
+        "choices": [
+            "When clock signal is low",
+            "When clock signal is high",
+            "When there is a rising edge in the clock signal",
+            "When there is a falling edge in the clock signal"
+        ],
+        "image_description": "D Flip-Flop",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: When will the flip-flop output change? Choices: (A) When clock signal is low (B) When clock signal is high (C) When there is a rising edge in the clock signal (D) When there is a falling edge in the clock signal ",
+        "response": "A D flip-flop, also known as a data or delay flip-flop, changes its output state based on the input data (D) and the clock (CLK) signal. The critical action of the D flip-flop typically occurs at a specific edge of the clock signal.\n\nFor a standard D flip-flop, the output (Q) changes state at the moment of a rising edge (transition from low to high) of the clock signal. This means that the value at the D input is sampled and transferred to the output Q at this transition.\n\nThus, the correct option is:\n(C) When there is a rising edge in the clock signal."
+    },
+    "494": {
+        "question": "True or False? This flip-flop is edge-triggered.",
+        "image": "99.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "D Flip-Flop",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? This flip-flop is edge-triggered. Choices: (A) True (B) False ",
+        "response": "To determine whether the D Flip-Flop in the given figure is edge-triggered, let's go over some key characteristics of edge-triggered D Flip-Flops. \n\nAn edge-triggered D Flip-Flop captures the value on the D input at a particular transition (either rising or falling edge) of the clock signal and then holds that value until the next relevant transition of the clock signal.\n\nThe drawing or figure of a D Flip-Flop typically includes a symbol indicating its edge sensitivity:\n- A triangle on the clock input terminal signifies edge-triggering.\n  - A simple triangle indicates positive (rising) edge-triggered.\n  - A triangle with an inversion bubble (circle) indicates negative (falling) edge-triggered.\n\nWithout the actual image of the figure, we can rely on the description: if the figure of the D Flip-Flop includes this symbol (triangle with or without the inversion bubble) on the clock input, it is indeed edge-triggered.\n\nGiven this understanding, let's answer the question:\n\n**Question: True or False? This flip-flop is edge-triggered.**\n**Choices: (A) True (B) False**\n\nThe correct answer, assuming the figure displays an edge-triggering symbol, would be:\n\n(A) True"
+    },
+    "495": {
+        "question": "What makes this flip-flop different from a gated latch?",
+        "image": "99.jpg",
+        "choices": [
+            "This FF is synchronous, while a gated latch is not",
+            "This FF is asynchronous, while a gated latch is not",
+            "This FF can be made of NAND gates, while a gated latch cannot",
+            "This FF is usually made of NOR gates, while a gated latch is not"
+        ],
+        "image_description": "D Flip-Flop",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What makes this flip-flop different from a gated latch? Choices: (A) This FF is synchronous, while a gated latch is not (B) This FF is asynchronous, while a gated latch is not (C) This FF can be made of NAND gates, while a gated latch cannot (D) This FF is usually made of NOR gates, while a gated latch is not ",
+        "response": "To determine what makes a D flip-flop different from a gated latch, let's understand the characteristics of both devices:\n\n1. **D Flip-Flop**:\n    - A D (Data or Delay) flip-flop is a synchronous device. This means that its data output transitions occur in sync with a clock signal. The output of the D flip-flop only changes at the edge of the clock signal.\n    - It typically responds to the rising or falling edge of the clock signal.\n    - D flip-flops are used in designing sequential circuits and systems that rely on precise timing and synchronization.\n\n2. **Gated Latch**:\n    - A gated latch, on the other hand, is a level-sensitive device. This means that its output can change as long as the gated (enable) signal is active (high or low depending on the design).\n    - It doesn't have a clock signal to synchronize its output changes, so it is not considered a synchronous device.\n    - A gated latch can be made of NAND or NOR gates, depending on the specific design.\n\nWith this understanding, let's evaluate the given choices:\n\n(A) **This FF is synchronous, while a gated latch is not**:\n- Correct. A D flip-flop is a synchronous device operating in sync with a clock signal, whereas a gated latch does not operate synchronously.\n\n(B) **This FF is asynchronous, while a gated latch is not**:\n- Incorrect. A D flip-flop is synchronous, not asynchronous.\n\n(C) **This FF can be made of NAND gates, while a gated latch cannot**:\n- Incorrect. Both D flip-flops and gated latches can be made using NAND gates depending on the design.\n\n(D) **This FF is usually made of NOR gates, while a gated latch is not**:\n- Incorrect. Both D flip-flops and gated latches can be made using either NAND or NOR gates. The choice of gates generally depends on the specific design requirements rather than a definitive difference between the two.\n\nGiven the explanations, the correct answer is:\n\n**(A) This FF is synchronous, while a gated latch is not**"
+    },
+    "1024": {
+        "question": "Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What is the purpose of the logic in the dashed box?",
+        "image": "131.jpg",
+        "choices": [
+            "Complicating the machine",
+            "Slowing down the machine to improve precision",
+            "Speeding up the machine to improve precision",
+            "Establishing a priority scheme for the machine"
+        ],
+        "image_description": "Ice Cream Machine Glue Logic",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What is the purpose of the logic in the dashed box? Choices: (A) Complicating the machine (B) Slowing down the machine to improve precision (C) Speeding up the machine to improve precision (D) Establishing a priority scheme for the machine "    },
+    "1025": {
+        "question": "Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What is the function of the bottom AND gate?",
+        "image": "131.jpg",
+        "choices": [
+            "Responsible for enabling the mixture of flavor and blocking mango flavor when lychee was not chosen",
+            "Responsible for blocking lychee flavor",
+            "Enabling mango flavor",
+            "Responsible for enabling the mango flavor and blocking lychee flavor"
+        ],
+        "image_description": "Ice Cream Machine Glue Logic",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What is the function of the bottom AND gate? Choices: (A) Responsible for enabling the mixture of flavor and blocking mango flavor when lychee was not chosen (B) Responsible for blocking lychee flavor (C) Enabling mango flavor (D) Responsible for enabling the mango flavor and blocking lychee flavor "    },
+    "1026": {
+        "question": "Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What happens if the user presses all of the buttons at the same time?",
+        "image": "132.jpg",
+        "choices": [
+            "Lychee ice cream is dispensed",
+            "Mango ice cream is dispensed",
+            "A blend of both ice creams is dispensed",
+            "No ice cream is dispensed"
+        ],
+        "image_description": "Ice Cream Machine Glue Logic",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have an ice cream machine that has a 3 buttons - Lychee, Mango, and Blend. This diagram represents the logic inside the machine. What happens if the user presses all of the buttons at the same time? Choices: (A) Lychee ice cream is dispensed (B) Mango ice cream is dispensed (C) A blend of both ice creams is dispensed (D) No ice cream is dispensed "    },
+    "1027": {
+        "question": "A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. We will change the vending machine's behavior such that it dispenses a product during one of the scenarios that it currently does not. Doing this to which of these scenarios would cause the vending machine circuit to become larger?",
+        "image": "117.jpg",
+        "choices": [
+            "Pressing only A",
+            "Pressing only A and C",
+            "Pressing A, B, and C",
+            "Pressing only B and C"
+        ],
+        "image_description": "K-Map: B' + AC'",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "pos"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. We will change the vending machine's behavior such that it dispenses a product during one of the scenarios that it currently does not. Doing this to which of these scenarios would cause the vending machine circuit to become larger? Choices: (A) Pressing only A (B) Pressing only A and C (C) Pressing A, B, and C (D) Pressing only B and C ",
+        "response": "To solve this, we first need to understand the given Boolean expression and its corresponding K-Map.\n\nThe given Boolean function is \\( B' + AC' \\).\n\nLet's break it down:\n1. \\( B' \\): This represents the condition where \\( B \\) is 0 (not pressed).\n2. \\( AC' \\): This represents \\( A \\) is pressed, and \\( C \\) is not pressed.\n\nThe scenarios in which the vending machine currently dispenses a product (i.e., outputs '1') according to this equation are:\n- Any scenario where \\( B \\) is 0.\n- Any scenario where \\( A \\) is 1 and \\( C \\) is 0.\n\nOur goal is to identify which scenario, when causing the vending machine to dispense a product, would result in a more complex circuit.\n\n### Evaluating Each Choice\nFrom the original conditions:\n- \\( B' \\): covers 4 min-terms (000, 010, 100, 110)\n- \\( AC' \\): covers 2 min-terms (100, 101)\n\nLet's see the scenarios given in the problem:\n- **Option A: Pressing only A** (\\( A = 1, B = 0, C = 1 \\); represented by min-term 5 \\((101)\\))\n  - This is already covered by \\( B' \\) so adding this does not affect the current function.\n- **Option B: Pressing only A and C** (\\( A = 1, B = 0, C = 1 \\); represented by min-term 5 \\((101)\\))\n  - Already evaluated in Option A; no change.\n- **Option C: Pressing A, B, and C** (\\( A = 1, B = 1, C = 1 \\); represented by min-term 7 \\((111)\\))\n  - This scenario does not currently result in the machine dispensing a product (as it's not included in \\( B' + AC' \\)).\n  - Adding this scenario requires a new min-term 7, potentially increasing circuit complexity.\n- **Option D: Pressing only B and C** (\\( A = 0, B = 1, C = 1 \\); represented by min-term 3 \\((011)\\))\n  - Not covered by current expression, adding would require new complexity in the circuit.\n\nComparing scenarios C and D, both"
+    },
+    "1028": {
+        "question": "A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. What is the area of the vending machine circuit? Assume area is total number of gates used added with total number of inputs. Assume complemented inputs are available. ",
+        "image": "117.jpg",
+        "choices": [
+            "0",
+            "2",
+            "4",
+            "6"
+        ],
+        "image_description": "K-Map: B' + AC'",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "area"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. What is the area of the vending machine circuit? Assume area is total number of gates used added with total number of inputs. Assume complemented inputs are available.  Choices: (A) 0 (B) 2 (C) 4 (D) 6 ",
+        "response": "Let's break down and analyze the given Boolean expression B' + AC' to determine the components necessary for the vending machine circuit.\n\nFirst, rewrite the expression in a slightly adjusted manner:\n\\[ f = B' + A \\cdot C' \\]\n\n### Step-by-Step Analysis:\n\n1. **Identify Components:**\n- The expression consists of two main terms: \\( B' \\) and \\( AC' \\).\n- Inputs used are A, B, and C.\n\n2. **Complemented Inputs:**\n- Complemented inputs \\(B'\\) and \\(C'\\) are already available according to the problem statement.\n\n3. **AND Gate for \\( A \\cdot C' \\):**\n- This term requires an AND gate to combine A and \\(C'\\).\n\n4. **OR Gate to Add \\( B' \\) and \\( A \\cdot C' \\):**\n- Finally, these two results are combined using an OR gate.\n\n### Calculating the Area:\n\n- **Total number of gates:** We have 1 AND gate and 1 OR gate, resulting in 2 gates.\n- **Total number of inputs:** A, B, and C are counted once each.\n\nThe area is the sum of the total number of gates and the total number of inputs:\n\\[ \\text{Area} = \\text{Total number of gates} + \\text{Total number of inputs} \\]\n\\[ \\text{Area} = 2 \\text{ (gates)} + 3 \\text{ (inputs)} \\]\n\\[ \\text{Area} = 5 \\]\n\nHowever, upon reviewing the options provided:\n(A) 0\n(B) 2\n(C) 4\n(D) 6\n\nNone of these options equal 5. The closest possible value would actually match none of these without more context or potential insights on optimization. Assuming perhaps a misinterpretation of what is being counted or expected as optimal configuration, I would lean towards rechecking the choices under some potential different mapping or gate counts (considering theoretical optimizations could change and assume differently).\n\nTo ensure clear clarity without extremities:\nInitial answer derived surmounts missing option tendencies, yet instructional rechecks might validate better assumptions in differing manifold expectations. \n\nIn ideal simplifications with added configurations precisely reflecting 4 active unit considerations as simplified equation outlook:\n\n**Optimal Closest Consideration from Given Context-to-Closest entities, among provided:**\n\n\\[ \\boxed{C} \\]"
+    },
+    "1029": {
+        "question": "A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. Let's assume we use only one OR gate to build the vending machine circuit minimally. How many AND gates would we need?",
+        "image": "117.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "K-Map: B' + AC'",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table"
+            ],
+            "image_char": [
+                "K_map_in_image",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: A vending machine dispenses a product given certain sets of inputs, and this output behavior is given by the K-Map. Each of the \"inputs\", A, B, and C, represent different buttons on the vending machine. Let's assume we use only one OR gate to build the vending machine circuit minimally. How many AND gates would we need? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "To solve the given problem, which is to determine the number of AND gates required minimally for the vending machine circuit described by the K-Map expression \\( B' + AC' \\), we need to analyze the components of the Boolean expression.\n\nThe Boolean expression provided is:\n\\[ B' + AC' \\]\n\nThis expression indicates the following:\n1. \\( B' \\): The output is true when \\( B \\) is false.\n2. \\( AC' \\): The output is true when \\( A \\) is true and \\( C \\) is false.\n\nTo implement this with gates:\n- The \\( B' \\) term requires only a NOT gate, as it only inverts \\( B \\).\n- The \\( AC' \\) term requires:\n  - An AND gate to combine \\( A \\) and \\( C' \\) (where \\( C' \\) is the NOT of \\( C \\)).\n\nTherefore, we need:\n1. One AND gate for the \\( AC' \\) term.\n\nThe terms are then combined using one OR gate.\n\nTherefore, the number of AND gates required is:\n\n\\[ \\boxed{1} \\]\n\nThus, the correct option is:\n\\[ \\text{(B) 1} \\]"
+    },
+    "1030": {
+        "question": "Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI is set to 1 and SHIFT is high, how many clock cycles will it take for water to come out of Q1? ",
+        "image": "150.jpg ",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "Shift register ",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI is set to 1 and SHIFT is high, how many clock cycles will it take for water to come out of Q1?  Choices: (A) 1 (B) 2 (C) 3 (D) 4 "    },
+    "1031": {
+        "question": "Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI is set to 1 and SHIFT is low, how many clock cycles will it take for Q0 to dispense water? ",
+        "image": "150.jpg ",
+        "choices": [
+            "1 clock cycle",
+            "2 clock cycles",
+            "Water will continuously come out of Q0 until SHIFT is high again",
+            "Water will never come out of Q0 until SHIFT is high again"
+        ],
+        "image_description": "Shift register",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI is set to 1 and SHIFT is low, how many clock cycles will it take for Q0 to dispense water?  Choices: (A) 1 clock cycle (B) 2 clock cycles (C) Water will continuously come out of Q0 until SHIFT is high again (D) Water will never come out of Q0 until SHIFT is high again "    },
+    "1032": {
+        "question": "Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI = 0, Q3 = 1, Q2 = 0, Q1 = 1, and Q0 = 0, which faucets will dispense water after 1 clock cycle if SHIFT is turned high?",
+        "image": "150.jpg ",
+        "choices": [
+            "Q3 and Q1",
+            "Q2 and Q0",
+            "Q1 and Q0",
+            "Q3 and Q2"
+        ],
+        "image_description": "Shift register",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose this diagram represents a set of faucets. Qi represents a water dispenser. When Qi = 1, water comes out of that faucet. If SI = 0, Q3 = 1, Q2 = 0, Q1 = 1, and Q0 = 0, which faucets will dispense water after 1 clock cycle if SHIFT is turned high? Choices: (A) Q3 and Q1 (B) Q2 and Q0 (C) Q1 and Q0 (D) Q3 and Q2 "    },
+    "1033": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What values should the purple rectangles have?",
+        "image": "141.jpg",
+        "choices": [
+            "C1 = 0, C0 = 0",
+            "C1 = 0, C0 = 1",
+            "C1 = 1, C0 = 1",
+            "C1 = 1, C0 = 0"
+        ],
+        "image_description": "Using comparators to determine uppercase ASCII values",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What values should the purple rectangles have? Choices: (A) C1 = 0, C0 = 0 (B) C1 = 0, C0 = 1 (C) C1 = 1, C0 = 1 (D) C1 = 1, C0 = 0 "    },
+    "1034": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What value should the blue rectangle be?",
+        "image": "141.jpg",
+        "choices": [
+            "0x41",
+            "0x53",
+            "0x6A",
+            "0x72"
+        ],
+        "image_description": "Using comparators to determine uppercase ASCII values",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What value should the blue rectangle be? Choices: (A) 0x41 (B) 0x53 (C) 0x6A (D) 0x72 "    },
+    "1035": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What values of Z1 and Z0 are not used for a meaningful output?",
+        "image": "141.jpg",
+        "choices": [
+            "Z1 = Z0 = 0",
+            "Z1 = 0, Z0 = 1",
+            "Z1 = Z0 = 1",
+            "Z1 = 1, Z0 = 0"
+        ],
+        "image_description": "Using comparators to determine uppercase ASCII values",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a uppercase letter. The following diagram functions to do so. What values of Z1 and Z0 are not used for a meaningful output? Choices: (A) Z1 = Z0 = 0 (B) Z1 = 0, Z0 = 1 (C) Z1 = Z0 = 1 (D) Z1 = 1, Z0 = 0 "    },
+    "1036": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. Each of the muxes in the diagram actually represent what?",
+        "image": "145.jpg",
+        "choices": [
+            "20 to 5 mux",
+            "28 to 7 mux",
+            "49 to 7 mux",
+            "4 to 1 mux"
+        ],
+        "image_description": "ASCII checker for multiple ranges",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. Each of the muxes in the diagram actually represent what? Choices: (A) 20 to 5 mux (B) 28 to 7 mux (C) 49 to 7 mux (D) 4 to 1 mux "    },
+    "1037": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. Each of the muxes in the diagram actually represent what combination of smaller muxes?",
+        "image": "145.jpg",
+        "choices": [
+            "Fourteen 4 to 1 muxes",
+            "Ten 16 to 1 muxes",
+            "Seven 4 to 1 muxes",
+            "Four 8 to 1 muxes"
+        ],
+        "image_description": "ASCII checker for multiple ranges",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. Each of the muxes in the diagram actually represent what combination of smaller muxes? Choices: (A) Fourteen 4 to 1 muxes (B) Ten 16 to 1 muxes (C) Seven 4 to 1 muxes (D) Four 8 to 1 muxes "    },
+    "1038": {
+        "question": "Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. How many selection lines does each mux have?",
+        "image": "145.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "ASCII checker for multiple ranges",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we want to figure out whether a given 7-bit ASCII code, C, represents a control character, upper-case letter, lower-case letter, or numeric digit. The following diagram functions to do so. How many selection lines does each mux have? Choices: (A) 0 (B) 1 (C) 2 (D) 3 "    },
+    "1039": {
+        "question": "What happens when LOAD is low?",
+        "image": "148.jpg",
+        "choices": [
+            "Current Q values are reloaded back into their respective flip-flops",
+            "Complements of Q are loaded into their respective flip-flops",
+            "IN values are loaded into their respective flip-flops",
+            "Complements of IN values are loaded into their respective flip-flops"
+        ],
+        "image_description": "4-bit parallel load register",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What happens when LOAD is low? Choices: (A) Current Q values are reloaded back into their respective flip-flops (B) Complements of Q are loaded into their respective flip-flops (C) IN values are loaded into their respective flip-flops (D) Complements of IN values are loaded into their respective flip-flops "    },
+    "1040": {
+        "question": "What does \"SI\" in this image stand for?",
+        "image": "149.jpg",
+        "choices": [
+            "Shift input",
+            "Shift in",
+            "Serial input",
+            "Serial internal"
+        ],
+        "image_description": "4-bit shift register",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What does \"SI\" in this image stand for? Choices: (A) Shift input (B) Shift in (C) Serial input (D) Serial internal "    },
+    "1041": {
+        "question": "What happens when LOAD is high?",
+        "image": "147.jpg",
+        "choices": [
+            "Current Q value is reloaded back into flip-flop",
+            "Complement of Q is loaded into flip-flop",
+            "IN value  loaded into flip-flop",
+            "Complement of IN values is loaded into flip-flop"
+        ],
+        "image_description": "Register using Mux",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What happens when LOAD is high? Choices: (A) Current Q value is reloaded back into flip-flop (B) Complement of Q is loaded into flip-flop (C) IN value  loaded into flip-flop (D) Complement of IN values is loaded into flip-flop "    },
+    "1042": {
+        "question": "What is the main issue with this type of register design?",
+        "image": "146.jpg",
+        "choices": [
+            "Circuit is too slow",
+            "Circuit is too fast",
+            "Adding logic to the clock path causes clock skew and timing issues",
+            "There is not enough logic to control the clock"
+        ],
+        "image_description": "Register using Clock Gating",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the main issue with this type of register design? Choices: (A) Circuit is too slow (B) Circuit is too fast (C) Adding logic to the clock path causes clock skew and timing issues (D) There is not enough logic to control the clock "    },
+    "1043": {
+        "question": "Why is using a mux here beneficial?",
+        "image": "147.jpg",
+        "choices": [
+            "Default inputs",
+            "Less area in circuit",
+            "No interference with clock signal going into flip-flop",
+            "Logic controls clock signal"
+        ],
+        "image_description": "Register using Mux",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Why is using a mux here beneficial? Choices: (A) Default inputs (B) Less area in circuit (C) No interference with clock signal going into flip-flop (D) Logic controls clock signal "    },
+    "1044": {
+        "question": "If an SI input is given to the circuit here, how many clock cycles later will the SO get that value?",
+        "image": "149.jpg",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "4-bit shift register",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If an SI input is given to the circuit here, how many clock cycles later will the SO get that value? Choices: (A) 1 (B) 2 (C) 3 (D) 4 "    },
+    "488": {
+        "question": "If D = 1, and the rising edge of the clock cycle hasn't occurred yet, what is Q?",
+        "image": "98.jpg",
+        "choices": [
+            "Q defaults to 0",
+            "Q defaults to 1",
+            "Q value stays same until rising edge of clock signal",
+            "Q rapidly switches between 0 and 1"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If D = 1, and the rising edge of the clock cycle hasn't occurred yet, what is Q? Choices: (A) Q defaults to 0 (B) Q defaults to 1 (C) Q value stays same until rising edge of clock signal (D) Q rapidly switches between 0 and 1 ",
+        "response": "In a positive-edge triggered D flip-flop, the output Q only changes state on the rising edge of the clock signal. Until the rising edge of the clock occurs, the output Q retains its previous state, regardless of the value of D.\n\nGiven that D = 1 and the rising edge of the clock cycle hasn't occurred yet, the output Q will remain in its previous state until the next rising edge of the clock.\n\nTherefore, the correct option is:\n(C) Q value stays same until rising edge of clock signal"
+    },
+    "489": {
+        "question": "True or False? This flip-flop is negative-edge triggered. ",
+        "image": "98.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "Positive-Edge Triggered D Flip-flop",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? This flip-flop is negative-edge triggered.  Choices: (A) True (B) False ",
+        "response": "The question asks whether a flip-flop described as Positive-Edge Triggered is actually negative-edge triggered. By definition, a Positive-Edge Triggered flip-flop changes its output state at the rising edge (transition from low to high) of the clock signal. Conversely, a Negative-Edge Triggered flip-flop changes its output state at the falling edge (transition from high to low) of the clock signal.\n\nGiven the terminology used in the question, a Positive-Edge Triggered flip-flop cannot be negative-edge triggered.\n\nTherefore, the correct answer is:\n\n(B) False"
+    },
+    "": {
+        "question": "When C is 3, what happens?",
+        "image": "123.jpg",
+        "choices": [
+            "Load Q value of register i+1 into flip-flop",
+            "Load IN value into flip-flop",
+            "Reload current Q value into flip-flop",
+            "Load Q value of register i-1 into flip-flop"
+        ],
+        "image_description": "Bidirectional Shift Register",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "flip_flop/latches_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: When C is 3, what happens? Choices: (A) Load Q value of register i+1 into flip-flop (B) Load IN value into flip-flop (C) Reload current Q value into flip-flop (D) Load Q value of register i-1 into flip-flop "    },
+    "875": {
+        "question": "What is the equivalent expression for this mux? ",
+        "image": "175.jpg",
+        "choices": [
+            "SD1 + SD0",
+            "S'D1 + S'D0",
+            " SD1 + S'D0 ",
+            " S'D1 + SD0 "
+        ],
+        "image_description": "2:1 mux",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "sop"
+            ],
+            "image_char": [
+                "mux/demux_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the equivalent expression for this mux?  Choices: (A) SD1 + SD0 (B) S'D1 + S'D0 (C)  SD1 + S'D0  (D)  S'D1 + SD0  ",
+        "response": "In a 2:1 multiplexer (mux), there are two data inputs (usually denoted as \\( D_0 \\) and \\( D_1 \\)), one select input \\( S \\), and one output \\( Y \\). The output \\( Y \\) can be expressed in terms of \\( D_0 \\), \\( D_1 \\), and \\( S \\) using the following logic:\n\n1. When \\( S = 0 \\), the output \\( Y \\) is \\( D_0 \\).\n2. When \\( S = 1 \\), the output \\( Y \\) is \\( D_1 \\).\n\nWe can write the output \\( Y \\) as a Boolean expression:\n\n\\[ Y = S'D_0 + SD_1 \\]\n\nWhere:\n- \\( S' \\) is the complement (NOT) of \\( S \\).\n- \\( + \\) represents the logical OR operation.\n- Concatenation (e.g., \\( SD_1 \\)) represents the logical AND operation.\n\nTherefore, the equivalent expression for the given 2:1 mux is:\n\n\\[ Y = S'D_0 + SD_1 \\]\n\nAmong the choices provided:\n(A) \\( SD_1 + SD_0 \\)\n(B) \\( S'D_1 + S'D0 \\)\n(C) \\( SD1 + S'D0 \\)\n(D) \\( S'D1 + SD0 \\)\n\nThe correct answer is:\n(C) \\( SD1 + S'D0 \\)"
+    },
+    "867": {
+        "question": "How many 8:1 muxes would we need to use to create this?",
+        "image": "174.jpg",
+        "choices": [
+            "0",
+            "1, plus 3 2:1 muxes",
+            "2",
+            "2, plus one 2:1 mux"
+        ],
+        "image_description": "16:1 mux",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many 8:1 muxes would we need to use to create this? Choices: (A) 0 (B) 1, plus 3 2:1 muxes (C) 2 (D) 2, plus one 2:1 mux ",
+        "response": "To solve the problem of creating a 16:1 multiplexer (mux) using 8:1 multiplexers (muxes), let's break down the requirements.\n\nA 16:1 mux selects one of 16 inputs using 4 select lines. If we were to use 8:1 muxes, each 8:1 mux can select from 8 inputs using 3 select lines. Therefore, to cover all 16 inputs, we would need two 8:1 muxes. However, we also need a mechanism to combine these two 8:1 muxes into a single 16:1 mux.\n\nHere's the step-by-step construction:\n\n1. **Two 8:1 Muxes**: These will handle the input selection for the lower 8 inputs (D0-D7) and the upper 8 inputs (D8-D15) respectively. Each 8:1 mux has 8 data inputs and 3 select lines.\n2. **Additional Mux for Selection Between 8:1 Muxes**: We need a way to decide whether to take the output from the first 8:1 mux or the second 8:1 mux. This can be done using a 2:1 mux which can select between the two outputs of the 8:1 muxes.\n\nLet\u2019s assign the select lines as follows:\n- The first 3 select lines (S0, S1, and S2) would go to both 8:1 muxes.\n- The 4th select line (S3) would go to the 2:1 mux. This select line would determine whether the first or the second group of 8 inputs (lower vs upper) is selected.\n\nTherefore, you need:\n- **Two 8:1 muxes** to manage the 16 input lines (each 8:1 mux manages 8 lines).\n- **One 2:1 mux** to select between the outputs of the two 8:1 muxes.\n\nThus the answer is:\n(D) 2, plus one 2:1 mux"
+    },
+    "869": {
+        "question": "How many NOT gates does this circuit have?",
+        "image": "174.jpg",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "16:1 mux",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many NOT gates does this circuit have? Choices: (A) 1 (B) 2 (C) 3 (D) 4 ",
+        "response": "To determine the number of NOT gates in the given 16:1 multiplexer (mux) circuit, we need to understand the typical architecture of a 16:1 mux. \n\nA 16:1 mux takes 16 input lines and, based on the combination of 4 selection lines (because 2^4 = 16), it directs one of those 16 inputs to the output. The selection lines are usually labeled as S0, S1, S2, and S3.\n\nTo construct a 16:1 mux using basic logic gates, including NOT gates, here is a logical breakdown of what is typically required:\n\n1. **Selection Line Decoding**: The selection lines will need to be decoded to use the correct combination of the input lines. This decoding typically involves creating complement (NOT) versions of each selection line.\n\n2. **Number of Inputs**: You need the complements of all the selection lines for proper toggling. For a 16:1 mux:\n   - S0 will have S0 and NOT S0\n   - S1 will have S1 and NOT S1\n   - S2 will have S2 and NOT S2\n   - S3 will have S3 and NOT S3\n\nThus, for each of the four selection lines, you require one NOT gate to produce its complement.\n\nSo, in total, the circuit requires 1 NOT gate for each of the 4 selection lines.\n\nHence, the correct answer is:\n\n(D) 4"
+    },
+    "855": {
+        "question": "What is the equivalent expression for this mux? ",
+        "image": "171.jpg",
+        "choices": [
+            " S1'S0'D1 + S1'S0D2 + S1S0'D3 + S1S0D4 ",
+            " S1S0D1 + S1'S0D2 + S1S0'D3 + S1S0D4 ",
+            " S1'S0'D1 + S1'S0D2 + S1S0D3 + S1S0D4 ",
+            " S1'S0'D1 + S1'S0'D2 + S1'S0'D3 + S1S0D4 "
+        ],
+        "image_description": "4:1 mux",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "sop"
+            ],
+            "image_char": [
+                "mux/demux_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the equivalent expression for this mux?  Choices: (A)  S1'S0'D1 + S1'S0D2 + S1S0'D3 + S1S0D4  (B)  S1S0D1 + S1'S0D2 + S1S0'D3 + S1S0D4  (C)  S1'S0'D1 + S1'S0D2 + S1S0D3 + S1S0D4  (D)  S1'S0'D1 + S1'S0'D2 + S1'S0'D3 + S1S0D4  ",
+        "response": "A 4:1 multiplexer (mux) selects one of four input data lines (often designated as \\(D0, D1, D2, D3\\)) and routes it to a single output line based on the values of two select lines (often designated as \\(S1\\) and \\(S0\\)). The truth table for a standard 4:1 mux is as follows:\n\n\\[\n\\begin{array}{|c|c|c|}\n\\hline\nS1 & S0 & \\text{Output} \\\\\n\\hline\n0 & 0 & D0 \\\\\n0 & 1 & D1 \\\\\n1 & 0 & D2 \\\\\n1 & 1 & D3 \\\\\n\\hline\n\\end{array}\n\\]\n\nFrom this truth table, we can write the expression for the output of the 4:1 mux in terms of its inputs \\(D0, D1, D2, D3\\) and select lines \\(S1, S0\\):\n\n\\[\n\\text{Output} = S1'S0'D0 + S1'S0D1 + S1S0'D2 + S1S0D3\n\\]\n\nNow, given the choices, let's compare the derived expression to each option:\n\n(A) \\(S1'S0'D1 + S1'S0D2 + S1S0'D3 + S1S0D4\\)\n\n(B) \\(S1S0D1 + S1'S0D2 + S1S0'D3 + S1S0D4\\)\n\n(C) \\(S1'S0'D1 + S1'S0D2 + S1S0D3 + S1S0D4\\)\n\n(D) \\(S1'S0'D1 + S1'S0'D2 + S1'S0'D3 + S1S0D4\\)\n\nAmong these options, the correct expression that matches the standard form for a 4:1 mux output (though in different terminology, using indices \\(D1, D2, D3\\)) is:\n\n(D) \\(S1'S0'D1 + S1'S0'D2 + S1'S0'D3 + S1S0D4\\)\n\nThis correctly reflects the use of the select lines to enable each input based on different combinations of \\(S1\\) and \\(S0\\). Therefore, the correct"
+    },
+    "854": {
+        "question": "When S1 = 0, and S0 = 1, which value will be outputted? Assume the values are equal to S1S0.",
+        "image": "171.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "4:1 mux",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "mux/demux_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: When S1 = 0, and S0 = 1, which value will be outputted? Assume the values are equal to S1S0. Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "To determine the output of a 4:1 multiplexer when S1 = 0 and S0 = 1, we need to understand how a 4:1 multiplexer operates. A 4:1 multiplexer has four input lines (D0, D1, D2, D3), two select lines (S1, S0), and one output line (Y).\n\nThe output of the multiplexer is determined by the values of the select lines S1 and S0 as follows:\n\n- When S1S0 = 00, the output Y is equal to D0.\n- When S1S0 = 01, the output Y is equal to D1.\n- When S1S0 = 10, the output Y is equal to D2.\n- When S1S0 = 11, the output Y is equal to D3.\n\nGiven the values S1 = 0 and S0 = 1, we can concatenate these binary values to get S1S0 = 01. According to the operation rules of the multiplexer, when S1S0 = 01, the output Y will be equal to the value at input D1.\n\nThus, the correct value outputted in this scenario is D1. The choices provided suggest that we interpret the value as the decimal equivalent of S1S0, which is 1.\n\nTherefore, the correct option is:\n\n(B) 1"
+    },
+    "864": {
+        "question": "For any given input bit pattern, how many output bits will be 0, given that EN = 1?",
+        "image": "173.jpg",
+        "choices": [
+            "2",
+            "3",
+            "5",
+            "7"
+        ],
+        "image_description": "3:8 decoder",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "encoder/decoder_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: For any given input bit pattern, how many output bits will be 0, given that EN = 1? Choices: (A) 2 (B) 3 (C) 5 (D) 7 ",
+        "response": "A 3:8 decoder is a digital device that decodes a 3-bit binary input into one of eight outputs. When the enable (EN) signal is active (EN = 1), the decoder activates exactly one of its eight outputs corresponding to the input bit pattern (000 to 111), and all other outputs remain inactive.\n\nSince there is only one active output and the rest are inactive, for any given input bit pattern with EN = 1 presence, only one output will be 1 and the remaining will be 0.\n\nTherefore, the number of output bits that will be 0 is 7.\n\nThe correct option is:\n(D) 7"
+    },
+    "856": {
+        "question": "How many AND gates and NOT gates are in the circuit for this decoder?",
+        "image": "172.jpg",
+        "choices": [
+            "4 AND gates",
+            "2 NOT gates",
+            "All of the above"
+        ],
+        "image_description": "2:4 decoder ",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "encoder/decoder_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many AND gates and NOT gates are in the circuit for this decoder? Choices: (A) 4 AND gates (B) 2 NOT gates (C) All of the above ",
+        "response": "To solve this question, let's understand the construction of a 2:4 decoder. A 2:4 decoder takes 2 input bits and produces 4 output bits, with only one of the outputs being high (1) at any given time, based on the input combination.\n\n### Construction of a 2:4 Decoder:\n\nGiven inputs \\( A \\) and \\( B \\):\n1. When \\( A = 0 \\) and \\( B = 0 \\), output \\( Y_0 \\) should be high (1).\n2. When \\( A = 0 \\) and \\( B = 1 \\), output \\( Y_1 \\) should be high (1).\n3. When \\( A = 1 \\) and \\( B = 0 \\), output \\( Y_2 \\) should be high (1).\n4. When \\( A = 1 \\) and \\( B = 1 \\), output \\( Y_3 \\) should be high (1).\n\nTo achieve this, we use the following equations that denote how each output \\( Y \\) is derived from inputs \\( A \\) and \\( B \\):\n\n- \\( Y_0 = \\overline{A} \\cdot \\overline{B} \\)\n- \\( Y_1 = \\overline{A} \\cdot B \\)\n- \\( Y_2 = A \\cdot \\overline{B} \\)\n- \\( Y_3 = A \\cdot B \\)\n\nFrom these equations, observe that:\n\n- Each output requires a combination of AND gates and NOT gates.\n- \\( \\overline{A} \\) and \\( \\overline{B} \\) represent the NOT gates for the inputs \\( A \\) and \\( B \\).\n\n### Count of Gates:\n- For \\( \\overline{A} \\) and \\( \\overline{B} \\), we need **2 NOT gates**.\n- Each output \\( Y_0, Y_1, Y_2, Y_3 \\) requires an **AND gate**, leading to a total of **4 AND gates**.\n\n### Conclusion:\nTherefore, a 2:4 decoder circuit has 4 AND gates and 2 NOT gates.\n\nThe correct option that covers both of these elements is:\n(C) All of the above\n\nHence, the answer is **C**."
+    },
+    "863": {
+        "question": "How many bit patterns will result in the output being 1, given that EN = 0?",
+        "image": "173.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "3:8 decoder",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "encoder/decoder_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many bit patterns will result in the output being 1, given that EN = 0? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "A 3:8 decoder has 3 input lines and 8 output lines. The enable (EN) input acts as a control signal that allows the decoder to function when it is active (usually when EN = 1). If EN = 0, the decoder is disabled, and typically all output lines are forced to 0 regardless of the input values.\n\nGiven that EN = 0, it means the decoder is not enabled. Hence, no matter what the input bit pattern is (000 to 111, which totals 8 possible patterns), all outputs will remain 0.\n\nTherefore, the number of bit patterns that will result in the output being 1 is zero.\n\nThe correct option is:\n(A) 0"
+    },
+    "860": {
+        "question": "If S1 = 0, S0 = 1, and EN = 1, what is the is the value of output bits in decimal form?",
+        "image": "172.jpg",
+        "choices": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "image_description": "2:4 decoder",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "encoder/decoder_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: If S1 = 0, S0 = 1, and EN = 1, what is the is the value of output bits in decimal form? Choices: (A) 0 (B) 1 (C) 2 (D) 3 ",
+        "response": "In a 2:4 decoder, there are two selection lines \\( S1 \\) and \\( S0 \\), and an enable line \\( EN \\). The output lines are typically labeled as \\( Y0, Y1, Y2, \\) and \\( Y3 \\). The decoder activates one of the four output lines based on the values of \\( S1 \\) and \\( S0 \\) when \\( EN \\) (enable) is active (usually when \\( EN = 1 \\)). \n\nGiven:\n- \\( S1 = 0 \\)\n- \\( S0 = 1 \\)\n- \\( EN = 1 \\)\n\nLet's examine the possible output for the given input values:\n\n1. When \\( EN = 1 \\) and the decoder is enabled:\n   - If \\( S1 = 0 \\) and \\( S0 = 0 \\), \\( Y0 \\) is active.\n   - If \\( S1 = 0 \\) and \\( S0 = 1 \\), \\( Y1 \\) is active.\n   - If \\( S1 = 1 \\) and \\( S0 = 0 \\), \\( Y2 \\) is active.\n   - If \\( S1 = 1 \\) and \\( S0 = 1 \\), \\( Y3 \\) is active.\n\nFor the given condition \\( S1 = 0 \\) and \\( S0 = 1 \\) with \\( EN = 1 \\), the output line \\( Y1 \\) is activated.\n\nSince \\( Y1 \\) corresponds to the decimal value 1, the output in decimal form is 1.\n\nSo, the correct option is:\n\n(B) 1"
+    },
+    "861": {
+        "question": "How many AND gates and NOT gates are in the circuit for this decoder?",
+        "image": "173.jpg",
+        "choices": [
+            "4 AND gates, 1 NOT gate",
+            "9 AND gates, 0 NOT gates",
+            "0 AND gates, 11 NOT gates",
+            "8 AND gates, 3 NOT gates"
+        ],
+        "image_description": "3:8 decoder",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "encoder/decoder_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many AND gates and NOT gates are in the circuit for this decoder? Choices: (A) 4 AND gates, 1 NOT gate (B) 9 AND gates, 0 NOT gates (C) 0 AND gates, 11 NOT gates (D) 8 AND gates, 3 NOT gates ",
+        "response": "A 3:8 decoder takes 3 input lines and decodes them into 8 unique output lines. Each output corresponds to one of the 8 combinations of the 3 inputs. \n\nTo construct the 3:8 decoder, we think about the binary combinations of the 3 input lines (let\u2019s say A, B, C). The output lines can be represented based on the binary combinations of these inputs as follows:\n\n- When (A, B, C) is (0, 0, 0) -> Output Y0\n- When (A, B, C) is (0, 0, 1) -> Output Y1\n- When (A, B, C) is (0, 1, 0) -> Output Y2\n- When (A, B, C) is (0, 1, 1) -> Output Y3\n- When (A, B, C) is (1, 0, 0) -> Output Y4\n- When (A, B, C) is (1, 0, 1) -> Output Y5\n- When (A, B, C) is (1, 1, 0) -> Output Y6\n- When (A, B, C) is (1, 1, 1) -> Output Y7\n\nEach of these outputs can be generated using AND gates combined with the necessary NOT gates if needed to get the required input inversions. \n\nFor example:\n- Y0 (000) = NOT(A) AND NOT(B) AND NOT(C)\n- Y1 (001) = NOT(A) AND NOT(B) AND C\n- Y2 (010) = NOT(A) AND B AND NOT(C)\n- Y3 (011) = NOT(A) AND B AND C\n- Y4 (100) = A AND NOT(B) AND NOT(C)\n- Y5 (101) = A AND NOT(B) AND C\n- Y6 (110) = A AND B AND NOT(C)\n- Y7 (111) = A AND B AND C\n\nFrom these expressions, each output is generated using one AND gate. So there are 8 AND gates. To implement the NOT operations, you need to invert the input lines wherever necessary:\n- You need to invert A for Y0, Y1, Y2, Y3 (1 NOT gate)\n- You need to invert B for"
+    },
+    "1004": {
+        "question": "The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S2+ (the next-state bit for S2)? ",
+        "image": "206.jpg",
+        "choices": [
+            " S2' ",
+            "S2'S1' + S2S1",
+            "S2' + S0",
+            "S2"
+        ],
+        "image_description": "Stoplight FSM Diagram",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S2+ (the next-state bit for S2)?  Choices: (A)  S2'  (B) S2'S1' + S2S1 (C) S2' + S0 (D) S2 "    },
+    "1005": {
+        "question": "The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S1+ (the next-state bit for S1)?",
+        "image": "206.jpg",
+        "choices": [
+            " S2' ",
+            "S2'S1' + S2S1",
+            "S2' + S0",
+            "S2"
+        ],
+        "image_description": "Stoplight FSM Diagram",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S1+ (the next-state bit for S1)? Choices: (A)  S2'  (B) S2'S1' + S2S1 (C) S2' + S0 (D) S2 "    },
+    "1006": {
+        "question": "The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S0+ (the next-state bit for S0)?",
+        "image": "206.jpg",
+        "choices": [
+            " S2' ",
+            "S2'S1' + S2S1",
+            "S2' + S0",
+            "S2"
+        ],
+        "image_description": "Stoplight FSM Diagram",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: The current state bit for each state of the FSM are given in the format S2S1S0. What is the expression for S0+ (the next-state bit for S0)? Choices: (A)  S2'  (B) S2'S1' + S2S1 (C) S2' + S0 (D) S2 "    },
+    "1007": {
+        "question": "Suppose we have a finite state machine that's a counter which can be halted at any time. The current state bit for each state of the FSM are given in the format S2S1S0. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. We have a bit called \"HOLD\" that represents whether or not the counter should retain its value for the next cycle. What is the expression for S1+ (next-state bit for S1)? Write the expression in terms of HOLD, S2, S1, and S0. ",
+        "image": "199.jpg",
+        "choices": [
+            "HOLD",
+            "(HOLD)'S0 + (HOLD)S1",
+            " (HOLD)S0 + (HOLD)'S1' ",
+            "(HOLD)(S1' + S0')' "
+        ],
+        "image_description": "Counter with Halt Function FSM - full",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have a finite state machine that's a counter which can be halted at any time. The current state bit for each state of the FSM are given in the format S2S1S0. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. We have a bit called \"HOLD\" that represents whether or not the counter should retain its value for the next cycle. What is the expression for S1+ (next-state bit for S1)? Write the expression in terms of HOLD, S2, S1, and S0.  Choices: (A) HOLD (B) (HOLD)'S0 + (HOLD)S1 (C)  (HOLD)S0 + (HOLD)'S1'  (D) (HOLD)(S1' + S0')'  "    },
+    "1008": {
+        "question": "Suppose we have a finite state machine that's a counter which can be halted at any time. The current state bit for each state of the FSM are given in the format S2S1S0. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. We have a bit called \"HOLD\" that represents whether or not the counter should retain its value for the next cycle. What is the expression for S0+ (next-state bit for S0)? Write the expression in terms of HOLD, S2, S1, and S0. ",
+        "image": "199.jpg",
+        "choices": [
+            "HOLD",
+            "(HOLD)'S0 + (HOLD)S1",
+            " (HOLD)S0 + (HOLD)'S1' ",
+            "(HOLD)(S1' + S0')' "
+        ],
+        "image_description": "Counter with Halt Function FSM - full",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "K_map",
+                "Truth_Table",
+                "sop"
+            ],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "3",
+            "Question type": "deep_analysis",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have a finite state machine that's a counter which can be halted at any time. The current state bit for each state of the FSM are given in the format S2S1S0. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. We have a bit called \"HOLD\" that represents whether or not the counter should retain its value for the next cycle. What is the expression for S0+ (next-state bit for S0)? Write the expression in terms of HOLD, S2, S1, and S0.  Choices: (A) HOLD (B) (HOLD)'S0 + (HOLD)S1 (C)  (HOLD)S0 + (HOLD)'S1'  (D) (HOLD)(S1' + S0')'  "    },
+    "1009": {
+        "question": "How many flip-flops are required to create the circuit for this FSM?",
+        "image": "191.jpg",
+        "choices": [
+            "3",
+            "10",
+            "19",
+            "27"
+        ],
+        "image_description": "RGB color sequencer state diagram",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many flip-flops are required to create the circuit for this FSM? Choices: (A) 3 (B) 10 (C) 19 (D) 27 "    },
+    "1010": {
+        "question": "True or False? Pushing \"lock\" always puts the car in the \"locked\" state. ",
+        "image": "126.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "Car FSM (plain)",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? Pushing \"lock\" always puts the car in the \"locked\" state.  Choices: (A) True (B) False "    },
+    "1011": {
+        "question": "What is the only state that the \"driver\" state can be reached from?",
+        "image": "126.jpg",
+        "choices": [
+            "Driver",
+            "Alarm",
+            "Unlocked",
+            "Locked"
+        ],
+        "image_description": "Car FSM (plain)",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the only state that the \"driver\" state can be reached from? Choices: (A) Driver (B) Alarm (C) Unlocked (D) Locked "    },
+    "1012": {
+        "question": "How many transition rules are there in this finite state machine?",
+        "image": "126.jpg",
+        "choices": [
+            "5",
+            "10",
+            "15",
+            "20"
+        ],
+        "image_description": "Car FSM (plain)",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many transition rules are there in this finite state machine? Choices: (A) 5 (B) 10 (C) 15 (D) 20 "    },
+    "1013": {
+        "question": "Suppose we have a finite state machine that's a counter which can be halted at any time. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. What does G represent?",
+        "image": "197.jpg",
+        "choices": [
+            "Whether or not the 'Go' button has been pressed",
+            "Whether or not the 'Halt' button has been pressed",
+            "Whether or not the number being counted is even",
+            "Whether or not the number being counted is odd"
+        ],
+        "image_description": "Counter with Halt Function FSM - bit values added",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "fsm_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "1",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: Suppose we have a finite state machine that's a counter which can be halted at any time. There is a \"halt\" button that can be pressed to halt the counter, and a \"go\" button that can takes the machine out of its halted state and make it continue. What does G represent? Choices: (A) Whether or not the 'Go' button has been pressed (B) Whether or not the 'Halt' button has been pressed (C) Whether or not the number being counted is even (D) Whether or not the number being counted is odd "    },
+    "1014": {
+        "question": "How many times does x change value in this diagram?",
+        "image": "207.jpg",
+        "choices": [
+            "1",
+            "4",
+            "5",
+            "9"
+        ],
+        "image_description": "Clock Timing Diagram",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "clk_diagram_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many times does x change value in this diagram? Choices: (A) 1 (B) 4 (C) 5 (D) 9 "    },
+    "1015": {
+        "question": "True or False? x changes during the falling edge of the clock signal, but D1 and D0 don't.",
+        "image": "207.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "Clock Timing Diagram",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "clk_diagram_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? x changes during the falling edge of the clock signal, but D1 and D0 don't. Choices: (A) True (B) False "    },
+    "1016": {
+        "question": "True or False? x only changes during the rising edge of the clock signal.",
+        "image": "208.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "Clock Timing Diagram",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "clk_diagram_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? x only changes during the rising edge of the clock signal. Choices: (A) True (B) False "    },
+    "1017": {
+        "question": "What is the period of the clock signal?",
+        "image": "208.jpg",
+        "choices": [
+            "0.5 seconds",
+            "1 second",
+            "1.5 seconds",
+            "2 seconds"
+        ],
+        "image_description": "Clock Timing Diagram",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "clk_diagram_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What is the period of the clock signal? Choices: (A) 0.5 seconds (B) 1 second (C) 1.5 seconds (D) 2 seconds "    },
+    "1018": {
+        "question": "When does D0 change?",
+        "image": "208.jpg",
+        "choices": [
+            "During the rising edges of the clock signal",
+            "During the falling edges of the clock signal",
+            "When the clock signal is high",
+            "When the clock signal is low"
+        ],
+        "image_description": "Clock Timing Diagram",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "clk_diagram_in_img",
+                "synchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: When does D0 change? Choices: (A) During the rising edges of the clock signal (B) During the falling edges of the clock signal (C) When the clock signal is high (D) When the clock signal is low "    },
+    "1019": {
+        "question": "What expression does the circuit represent?",
+        "image": "209.jpg",
+        "choices": [
+            "NOT A",
+            "A AND 0",
+            "A AND 1",
+            "A"
+        ],
+        "image_description": "Q = (NOT A) - CMOS",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "transistors_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What expression does the circuit represent? Choices: (A) NOT A (B) A AND 0 (C) A AND 1 (D) A "    },
+    "1020": {
+        "question": "What operation does the functioning of this transistor circuit represent?",
+        "image": "210.jpg",
+        "choices": [
+            "AND",
+            "OR",
+            "NOR",
+            "NAND"
+        ],
+        "image_description": "Q = (A NOR B) - CMOS",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "transistors_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What operation does the functioning of this transistor circuit represent? Choices: (A) AND (B) OR (C) NOR (D) NAND "    },
+    "1021": {
+        "question": "How are the p-type transistors connected?",
+        "image": "210.jpg",
+        "choices": [
+            "In series",
+            "In parallel",
+            "Not connected",
+            "In a loop"
+        ],
+        "image_description": "Q = (A NOR B) - CMOS ",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "transistors_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How are the p-type transistors connected? Choices: (A) In series (B) In parallel (C) Not connected (D) In a loop "    },
+    "1022": {
+        "question": "True or False? If A and B are both on, Q will definitely be on.",
+        "image": "211.jpg",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "image_description": "Q = (A NAND B) - CMOS ",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "transistors_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: True or False? If A and B are both on, Q will definitely be on. Choices: (A) True (B) False "    },
+    "1023": {
+        "question": "How many combinations of A and B are there such that Q will be off?",
+        "image": "211.jpg ",
+        "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "image_description": "Q = (A NAND B) - CMOS",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [],
+            "image_char": [
+                "transistors_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "factual",
+            "valid_for_text_only": "0"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How many combinations of A and B are there such that Q will be off? Choices: (A) 1 (B) 2 (C) 3 (D) 4 "    },
+    "150": {
+        "question": "What are the two gates used in this circuit?",
+        "image": "30.jpg ",
+        "choices": [
+            "AND and OR",
+            "NAND and NOR",
+            "AND and NAND",
+            "OR and NOR"
+        ],
+        "image_description": "J = (A nand B) nor (C nand D) nor (E nand F) nor (G nand H)",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What are the two gates used in this circuit? Choices: (A) AND and OR (B) NAND and NOR (C) AND and NAND (D) OR and NOR ",
+        "response": "To analyze the given expression \\( J = (A \\text{ nand } B) \\text{ nor } (C \\text{ nand } D) \\text{ nor } (E \\text{ nand } F) \\text{ nor } (G \\text{ nand } H) \\):\n\n1. A NAND gate outputs a 1 when not all of its inputs are 1, otherwise, it outputs a 0.\n2. A NOR gate outputs a 1 only when all of its inputs are 0, otherwise, it outputs a 0.\n\nThe expression consists of multiple sub-expressions, each of which first applies a NAND gate:\n- \\( A \\text{ nand } B \\)\n- \\( C \\text{ nand } D \\)\n- \\( E \\text{ nand } F \\)\n- \\( G \\text{ nand } H \\)\n\nThe outputs of these NAND gates are then combined using NOR gates:\n- \\((A \\text{ nand } B) \\text{ nor } (C \\text{ nand } D)\\)\n- \\[((A \\text{ nand } B) \\text{ nor } (C \\text{ nand } D)) \\text{ nor } (E \\text{ nand } F)\\]\n- \\{[((A \\text{ nand } B) \\text{ nor } (C \\text{ nand } D)) \\text{ nor } (E \\text{ nand } F)] \\text{ nor } (G \\text{ nand } H)\\}\n\nThus, the two types of gates used in this circuit are NAND and NOR.\n\nSo, the correct choice is:\n\n(B) NAND and NOR"
+    },
+    "159": {
+        "question": "What are the gates used in this circuit?",
+        "image": "32.jpg",
+        "choices": [
+            "AND and OR",
+            "NAND and NOR",
+            "AND and NAND",
+            "OR and NOR"
+        ],
+        "image_description": "K = (A or B) nor (C or D) nor (E or F) nor (G or H) nor (I or J)",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What are the gates used in this circuit? Choices: (A) AND and OR (B) NAND and NOR (C) AND and NAND (D) OR and NOR ",
+        "response": "To solve for the gates used in the circuit given by \\( K = \\overline{(A \\lor B) \\lor (C \\lor D) \\lor (E \\lor F) \\lor (G \\lor H) \\lor (I \\lor J)} \\), let's break down the expression:\n\n1. The internal terms use the OR gate:\n   - \\(A \\lor B\\)\n   - \\(C \\lor D\\)\n   - \\(E \\lor F\\)\n   - \\(G \\lor H\\)\n   - \\(I \\lor J\\)\n\n2. The next step involves the NOR operation, which is a combination of OR and NOT gates:\n   - The final output \\( K \\) is the NOR of all these intermediate results.\n\nThus, the gates used are OR gates for the individual pairs and NOR gates to combine the results.\n\nTherefore, the correct option is:\n(D) OR and NOR"
+    },
+    "165": {
+        "question": "K is the direct output of which type of gate?",
+        "image": "33.jpg",
+        "choices": [
+            "XOR gate",
+            "XNOR gate",
+            "NAND gate",
+            "NOR gate"
+        ],
+        "image_description": "K = ((A xor B) xnor (C or D)) xnor ((E and F) xnor (G nand H)) xnor (I nor J) ",
+        "correct_option": "B",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: K is the direct output of which type of gate? Choices: (A) XOR gate (B) XNOR gate (C) NAND gate (D) NOR gate ",
+        "response": "To determine the correct answer, we need to analyze the expression for \\( K \\). The expression is:\n\n\\[ K = ((A \\text{ XOR } B) \\text{ XNOR } (C \\text{ OR } D)) \\text{ XNOR } ((E \\text{ AND } F) \\text{ XNOR } (G \\text{ NAND } H)) \\text{ XNOR } (I \\text{ NOR } J) \\]\n\nLet's break it down step-by-step:\n\n1. First, consider the innermost parts of the expression:\n    - \\( A \\text{ XOR } B \\)\n    - \\( C \\text{ OR } D \\)\n    - \\( E \\text{ AND } F \\)\n    - \\( G \\text{ NAND } H \\)\n    - \\( I \\text{ NOR } J \\)\n\n2. Using those results, compute:\n    - \\( (A \\text{ XOR } B) \\text{ XNOR } (C \\text{ OR } D) \\)\n    - \\( (E \\text{ AND } F) \\text{ XNOR } (G \\text{ NAND } H) \\)\n    - Then, combining the previous results with:\n        - \\( ((E \\text{ AND } F) \\text{ XNOR } (G \\text{ NAND } H)) \\)\n\n3. Lastly, combine all the intermediate results:\n    - \\( ((A \\text{ XOR } B) \\text{ XNOR } (C \\text{ OR } D)) \\text{ XNOR } ((E \\text{ AND } F) \\text{ XNOR } (G \\text{ NAND } H)) \\)\n    - The result above is then XNORed with \\( (I \\text{ NOR } J) \\):\n\nThe final output \\( K \\) is derived by an XNOR operation as it results from the combination of multiple XNOR operations. Therefore, \\( K \\) is directly the output of an XNOR gate.\n\nHence, the correct option is:\n\n(B) XNOR gate"
+    },
+    "166": {
+        "question": "A and B are inputs to which type of gate?",
+        "image": "34.jpg",
+        "choices": [
+            "AND gate",
+            "NOT gate",
+            "NAND gate",
+            "NOR gate"
+        ],
+        "image_description": "K = (A nand B) and ((C nand D) and (E nand F)) and ((G nand H) and (I nand J))",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: A and B are inputs to which type of gate? Choices: (A) AND gate (B) NOT gate (C) NAND gate (D) NOR gate ",
+        "response": "Given the figure representing K = (A NAND B) and ((C NAND D) and (E NAND F)) and ((G NAND H) and (I NAND J)), we focus on the part that specifically involves A and B.\n\nThe expression involving A and B is (A NAND B).\n\nThis clearly indicates that A and B are inputs to a NAND gate.\n\nThus, the correct option is:\n(C) NAND gate"
+    },
+    "197": {
+        "question": "What type of gate are A and B inputs to?",
+        "image": "40.jpg",
+        "choices": [
+            "XOR gate",
+            "XNOR gate",
+            "OR gate",
+            "NOR gate"
+        ],
+        "image_description": "E = (A xor B) nand (C xor D) ",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What type of gate are A and B inputs to? Choices: (A) XOR gate (B) XNOR gate (C) OR gate (D) NOR gate ",
+        "response": "Given that E = (A xor B) nand (C xor D), A and B are inputs to an XOR gate because we can see from the expression (A xor B) that the operation between A and B is an XOR operation.\n\nTherefore, the type of gate A and B are inputs to is:\n\n(A) XOR gate"
+    },
+    "135": {
+        "question": "How can we alternatively represent the gate that's shown in the diagram?",
+        "image": "27.jpg ",
+        "choices": [
+            "OR gate followed by NOT gate",
+            "NOR gate followed by NOT gate",
+            "XOR followed by NOT gate",
+            "AND followed by NOT gate"
+        ],
+        "image_description": "E = (A nand B) nand (C nand D)",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "gate_replacement",
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "2",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: How can we alternatively represent the gate that's shown in the diagram? Choices: (A) OR gate followed by NOT gate (B) NOR gate followed by NOT gate (C) XOR followed by NOT gate (D) AND followed by NOT gate ",
+        "response": "The given expression is \\( E = (A \\text{ NAND } B) \\text{ NAND } (C \\text{ NAND } D) \\).\n\nTo solve this, let's first understand the NAND operation:\n\\[ A \\text{ NAND } B = \\overline{A \\cdot B} \\]\nwhere \\( \\cdot \\) represents the AND operation and \\(\\overline{}\\) represents the NOT operation.\n\nSo, we rewrite the expression step-by-step:\n\\[ A \\text{ NAND } B = \\overline{A \\cdot B} \\]\n\\[ C \\text{ NAND } D = \\overline{C \\cdot D} \\]\nThen,\n\\[ E = (\\overline{A \\cdot B}) \\text{ NAND } (\\overline{C \\cdot D}) \\]\n\nNow,\n\\[ \\overline{A \\cdot B} \\text{ NAND } \\overline{C \\cdot D} = \\overline{\\overline{A \\cdot B} \\cdot \\overline{C \\cdot D}} \\]\n\nLet's simplify the core part:\nThe AND operation on \\(\\overline{A \\cdot B}\\) and \\(\\overline{C \\cdot D}\\) is:\n\\[ \\overline{A \\cdot B} \\cdot \\overline{C \\cdot D} \\]\n\nWhen we apply the NOT operation over this AND operation, it becomes a NOR gate:\n\\[ \\overline{\\overline{A \\cdot B} \\cdot \\overline{C \\cdot D}} \\]\n\nThe inner AND operation between \\(\\overline{A \\cdot B}\\) and \\(\\overline{C \\cdot D}\\) followed by an outer NOT operation is evaluated as:\n\\[ \\text{NOR}(\\overline{A \\cdot B}, \\overline{C \\cdot D}) \\]\n\nThus, the original expression \\( E \\) is equivalently a NOR gate followed by a NOT gate. This combined operation effectively produces the NAND result as per the original circuit specified.\n\nTherefore, the answer is:\n(B) NOR gate followed by NOT gate"
+    },
+    "161": {
+        "question": "What are the gates used in this circuit?",
+        "image": "33.jpg",
+        "choices": [
+            "XOR, XNOR",
+            "AND, NAND",
+            "OR, NOR",
+            "All of the above"
+        ],
+        "image_description": "K = ((A xor B) xnor (C or D)) xnor ((E and F) xnor (G nand H)) xnor (I nor J)",
+        "correct_option": "D",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What are the gates used in this circuit? Choices: (A) XOR, XNOR (B) AND, NAND (C) OR, NOR (D) All of the above ",
+        "response": "To determine the types of gates used in the given logical expression K, let's break down the expression step by step:\n\n\\[ K = ((A \\, \\text{xor} \\, B) \\, \\text{xnor} \\, (C \\, \\text{or} \\, D)) \\, \\text{xnor} \\, ((E \\, \\text{and} \\, F) \\, \\text{xnor} \\, (G \\, \\text{nand} \\, H)) \\, \\text{xnor} \\, (I \\, \\text{nor} \\, J) \\]\n\n1. **(A xor B):** This part uses an XOR gate.\n2. **(C or D):** This part uses an OR gate.\n3. **((A xor B) xnor (C or D)):** This uses an XNOR gate.\n4. **(E and F):** This part uses an AND gate.\n5. **(G nand H):** This part uses a NAND gate.\n6. **((E and F) xnor (G nand H)):** This uses an XNOR gate.\n7. **(I nor J):** This part uses a NOR gate.\n8. **Overall expression ((A xor B) xnor (C or D)) xnor ((E and F) xnor (G nand H)) xnor (I nor J):** This uses multiple XNOR gates.\n\nThe logical expression utilizes the following gates:\n- XOR\n- XNOR\n- OR\n- AND\n- NAND\n- NOR\n\nGiven these observations, the correct choice encapsulates all the gates listed:\n\n**(D) All of the above**"
+    },
+    "167": {
+        "question": "The circles in the diagram are equivalent to using which type of gate?",
+        "image": "34.jpg",
+        "choices": [
+            "No gate",
+            "AND gate",
+            "NOT gate",
+            "OR gate"
+        ],
+        "image_description": "K = (A nand B) and ((C nand D) and (E nand F)) and ((G nand H) and (I nand J))",
+        "correct_option": "C",
+        "metadata": {
+            "concepts": [
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "1",
+            "Question type": "factual",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: The circles in the diagram are equivalent to using which type of gate? Choices: (A) No gate (B) AND gate (C) NOT gate (D) OR gate ",
+        "response": "For the given expression \\( K = (A \\text{ nand } B) \\text{ and } ((C \\text{ nand } D) \\text{ and } (E \\text{ nand } F)) \\text{ and } ((G \\text{ nand } H) \\text{ and } (I \\text{ nand } J)) \\), we need to determine what type of gate the circles in the diagram represent.\n\nFirst, let's break down the operations given:\n\n1. **NAND Gate**: The NAND gate is a universal gate that can be used to implement any Boolean function. The expression \\((A \\text{ nand } B)\\) is equivalent to \\(\\neg (A \\land B)\\).\n\nSince each segment of the expression is using \"nand\" operations:\n\n- \\(A \\text{ nand } B = \\neg (A \\land B)\\)\n- \\(C \\text{ nand } D = \\neg (C \\land D)\\)\n- \\(E \\text{ nand } F = \\neg (E \\land F)\\)\n- \\(G \\text{ nand } H = \\neg (G \\land H)\\)\n- \\(I \\text{ nand } J = \\neg (I \\land J)\\)\n\nThen, these \"nand\" results are combined using \"and\" operations:\n\n- The first level combined result: \\((A \\text{ nand } B)\\)\n- The second level combined result: \\(\\neg(C \\land D) \\text{ and } \\neg(E \\land F)\\)\n- The third level combined result: \\(\\neg(G \\land H) \\text{ and } \\neg(I \\land J)\\)\n\nThus, the large circles in the diagram, denoted by the operations \"nand\" (\\(\\neg(A \\land B)\\), etc.), imply the application of the NOT operation after the AND operation.\n\nGiven the choices:\n\n(A) No gate\n(B) AND gate\n(C) NOT gate\n(D) OR gate\n\nThe use of \"nand\" indicates both AND followed by NOT. \n\nDetermining that the circles represent the result from a logical operation, the answer is:\n\n- Since \"nand\" inverts the output of the AND gate, it represents a combination of AND followed by NOT.\n\nTherefore, the type of gate each circle is equivalent to, considering just one \"nand\" operation, is effectively a NOT gate.\n\nSo, the correct answer is:\n\n(C)"
+    },
+    "176": {
+        "question": "What could we replace the two NOT gates and NOR gate combination with, to simplify the circuit?",
+        "image": "36.jpg",
+        "choices": [
+            "AND gate",
+            "NOT gate",
+            "NAND gate",
+            "NOR gate"
+        ],
+        "image_description": "E = ((not A) nor (not B)) nor ((not C) nor (not D))",
+        "correct_option": "A",
+        "metadata": {
+            "concepts": [
+                "demorgan",
+                "gate_replacement",
+                "gates_detection"
+            ],
+            "image_char": [
+                "combinational_gates_in_img",
+                "asynchronous_circuit"
+            ],
+            "abstract_question": "0",
+            "difficulty level": "3",
+            "Question type": "computational",
+            "valid_for_text_only": "1"
+        },
+        "Hint": "Please answer the question and provide the correct option letter, e.g., A, B, C, D at the end. Question: What could we replace the two NOT gates and NOR gate combination with, to simplify the circuit? Choices: (A) AND gate (B) NOT gate (C) NAND gate (D) NOR gate ",
+        "response": "To simplify the given logical expression \\( E = \\left( \\neg A \\nor \\neg B \\right) \\nor \\left( \\neg C \\nor \\neg D \\right) \\), we need to use De Morgan's laws and the properties of logical gates.\n\nLet's break it down step by step:\n\n1. A NOR gate output is the negation of the OR of the inputs, so \\( \\neg A \\nor \\neg B \\) is equivalent to \\( \\neg (\\neg A \\lor \\neg B) \\).\n\n2. Using De Morgan's laws, \\( \\neg (\\neg A \\lor \\neg B) \\) simplifies to \\( A \\land B \\).\n\n3. Similarly, \\( \\neg C \\nor \\neg D \\) simplifies to \\( C \\land D \\).\n\n4. Now we have \\( E = (A \\land B) \\nor (C \\land D) \\).\n\n5. Using the NOR gate property again, \\( (A \\land B) \\nor (C \\land D) \\) is equivalent to \\( \\neg ((A \\land B) \\lor (C \\land D)) \\).\n\nTo replace the two NOT gates and NOR gate combination \\( \\neg A \\nor \\neg B \\):\n\n\\( \\neg A \\nor \\neg B = \\neg (\\neg A \\lor \\neg B) \\).\n\nFrom the steps above, we see that this is equivalent to an AND gate.\n\nThus, the answer to simplify \\( \\left( \\neg A \\nor \\neg B \\right) \\) directly is an AND gate.\n\nThe correct option is:\n\n(A) AND gate"
+    }
+}
